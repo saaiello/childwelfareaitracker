@@ -1,0 +1,248 @@
+{
+  "Alabama": { "tools": [], "status": "none" },
+  "Alaska": { "tools": [], "status": "none" },
+  "Arizona": { "tools": [], "status": "none" },
+  "Arkansas": { "tools": [], "status": "none" },
+  "California": {
+    "status": "unknown",
+    "tools": [
+      {
+        "name": "AURA (SAS Institute) + County Algorithm",
+        "use_type": "Risk screening",
+        "vendor": "SAS Institute + In-house (LA County DCFS)",
+        "year": "~2021",
+        "status": "unknown",
+        "notes": "Los Angeles County adopted a predictive risk algorithm, then reportedly backed away. Current status unclear — needs verification.",
+        "source_label": "The Imprint",
+        "source_url": "https://imprintnews.org/child-welfare-2/the-foster-care-system-turns-to-big-data-promising-or-profiling/62359"
+      }
+    ]
+  },
+  "Colorado": {
+    "status": "unknown",
+    "tools": [
+      {
+        "name": "Predictive risk model (county-level)",
+        "use_type": "Risk screening",
+        "vendor": "Unknown",
+        "year": "~2022",
+        "status": "unknown",
+        "notes": "Larimer, Arapahoe, and Douglas counties referenced as active users in Allegheny County's 2024 research summary. Tool name and vendor unknown.",
+        "source_label": "Allegheny County Analytics, 2024",
+        "source_url": "https://analytics.alleghenycounty.us/wp-content/uploads/2024/05/24-ACDHS-04-Predictive-Risk-Algorithms.pdf"
+      }
+    ]
+  },
+  "Connecticut": {
+    "status": "active",
+    "tools": [
+      {
+        "name": "Rapid Safety Feedback (RSF)",
+        "use_type": "Risk screening",
+        "vendor": "Eckerd Connects + Mindshare Technology",
+        "year": "~2015",
+        "status": "active",
+        "notes": "Confirmed user per Eckerd Connects and Imprint reporting. RSF uses data analytics to flag high-risk cases for intensive caseworker monitoring and coaching.",
+        "source_label": "The Imprint",
+        "source_url": "https://imprintnews.org/child-welfare-2/rapid-safety-feedbacks-rapid-ascent"
+      }
+    ]
+  },
+  "Delaware": { "tools": [], "status": "none" },
+  "Florida": {
+    "status": "active",
+    "tools": [
+      {
+        "name": "Rapid Safety Feedback (RSF)",
+        "use_type": "Risk screening",
+        "vendor": "Eckerd Connects + Mindshare Technology",
+        "year": "~2012",
+        "status": "active",
+        "notes": "Hillsborough County is the origin site of RSF. Uses predictive analytics to flag high-risk cases. Eckerd Connects serves as the Community-Based Lead Agency for child welfare in Hillsborough, Pasco, and Pinellas counties.",
+        "source_label": "Eckerd Connects",
+        "source_url": "https://eckerd.org/eckerd-rapid-safety-feedback-highlighted-national-report-commission-eliminate-child-abuse-neglect-fatalities/"
+      }
+    ]
+  },
+  "Georgia": { "tools": [], "status": "none" },
+  "Hawaii": { "tools": [], "status": "none" },
+  "Idaho": { "tools": [], "status": "none" },
+  "Illinois": {
+    "status": "discontinued",
+    "tools": [
+      {
+        "name": "Rapid Safety Feedback (RSF)",
+        "use_type": "Risk screening",
+        "vendor": "Eckerd Connects + Mindshare Technology",
+        "year": "2016–2017",
+        "status": "discontinued",
+        "notes": "Program ended after a scandal involving a no-bid contract, thousands of false positives, and high-profile child deaths not flagged by the system. More than 4,100 Illinois children were assigned a 90%+ probability of death or injury.",
+        "source_label": "GovTech / Chicago Tribune",
+        "source_url": "https://govtech.com/health/Illinois-Ends-Child-Abuse-Prediction-Program.html"
+      }
+    ]
+  },
+  "Indiana": {
+    "status": "active",
+    "tools": [
+      {
+        "name": "Rapid Safety Feedback (RSF) + State AI Policy (HR-3-11)",
+        "use_type": "Risk screening / AI governance",
+        "vendor": "Eckerd Connects + Mindshare Technology / State-approved tools",
+        "year": "~2015 / 2026",
+        "status": "active",
+        "notes": "Confirmed RSF user. In March 2026, Indiana DCS issued formal AI use policy HR-3-11 — one of the first states to do so. Policy explicitly prohibits AI as a decision-making tool and bars entry of confidential case information into AI tools.",
+        "source_label": "Indiana DCS Policy HR-3-11",
+        "source_url": "https://www.in.gov/dcs/files/HR-3-11.pdf"
+      }
+    ]
+  },
+  "Iowa": { "tools": [], "status": "none" },
+  "Kansas": { "tools": [], "status": "none" },
+  "Kentucky": { "tools": [], "status": "none" },
+  "Louisiana": {
+    "status": "active",
+    "tools": [
+      {
+        "name": "Rapid Safety Feedback (RSF)",
+        "use_type": "Risk screening",
+        "vendor": "Eckerd Connects + Mindshare Technology",
+        "year": "~2015",
+        "status": "active",
+        "notes": "Confirmed user per Eckerd Connects.",
+        "source_label": "The Imprint",
+        "source_url": "https://imprintnews.org/child-welfare-2/rapid-safety-feedbacks-rapid-ascent"
+      }
+    ]
+  },
+  "Maine": {
+    "status": "active",
+    "tools": [
+      {
+        "name": "Rapid Safety Feedback (RSF)",
+        "use_type": "Risk screening",
+        "vendor": "Eckerd Connects + Mindshare Technology",
+        "year": "~2015",
+        "status": "active",
+        "notes": "Confirmed user per Eckerd Connects and Imprint reporting. Maine was also flagged in a separate HHS Office of Inspector General audit for child abuse screening compliance issues.",
+        "source_label": "The Imprint",
+        "source_url": "https://imprintnews.org/child-welfare-2/rapid-safety-feedbacks-rapid-ascent"
+      }
+    ]
+  },
+  "Maryland": { "tools": [], "status": "none" },
+  "Massachusetts": { "tools": [], "status": "none" },
+  "Michigan": { "tools": [], "status": "none" },
+  "Minnesota": { "tools": [], "status": "none" },
+  "Mississippi": { "tools": [], "status": "none" },
+  "Missouri": { "tools": [], "status": "none" },
+  "Montana": { "tools": [], "status": "none" },
+  "Nebraska": { "tools": [], "status": "none" },
+  "Nevada": { "tools": [], "status": "none" },
+  "New Hampshire": { "tools": [], "status": "none" },
+  "New Jersey": { "tools": [], "status": "none" },
+  "New Mexico": { "tools": [], "status": "none" },
+  "New York": {
+    "status": "active",
+    "tools": [
+      {
+        "name": "ACS Quality Assurance Algorithm",
+        "use_type": "Risk screening",
+        "vendor": "In-house (NYC Administration for Children's Services)",
+        "year": "~2020",
+        "status": "active",
+        "notes": "NYC ACS uses an algorithm to flag cases for additional quality assurance review from among ~50,000 active cases. Factors include prior contacts, call volume, housing instability. Investigated by The Markup in May 2026. ACS formalized an AI governance policy in 2024.",
+        "source_label": "The Markup, May 2026",
+        "source_url": "https://themarkup.org/investigations/2025/05/20/the-nyc-algorithm-deciding-which-families-are-under-watch-for-child-abuse"
+      }
+    ]
+  },
+  "North Carolina": { "tools": [], "status": "none" },
+  "North Dakota": { "tools": [], "status": "none" },
+  "Ohio": {
+    "status": "active",
+    "tools": [
+      {
+        "name": "Rapid Safety Feedback (RSF)",
+        "use_type": "Risk screening",
+        "vendor": "Eckerd Connects + Mindshare Technology",
+        "year": "~2015",
+        "status": "active",
+        "notes": "Confirmed user per Eckerd Connects. Ohio funded its own RSF development per Imprint reporting.",
+        "source_label": "The Imprint",
+        "source_url": "https://imprintnews.org/child-welfare-2/rapid-safety-feedbacks-rapid-ascent"
+      }
+    ]
+  },
+  "Oklahoma": {
+    "status": "active",
+    "tools": [
+      {
+        "name": "Rapid Safety Feedback (RSF)",
+        "use_type": "Risk screening",
+        "vendor": "Eckerd Connects + Mindshare Technology",
+        "year": "~2015",
+        "status": "active",
+        "notes": "Confirmed user per Eckerd Connects.",
+        "source_label": "The Imprint",
+        "source_url": "https://imprintnews.org/child-welfare-2/rapid-safety-feedbacks-rapid-ascent"
+      }
+    ]
+  },
+  "Oregon": {
+    "status": "unknown",
+    "tools": [
+      {
+        "name": "Predictive risk tool (name unknown)",
+        "use_type": "Risk screening",
+        "vendor": "Unknown",
+        "year": "~2018",
+        "status": "unknown",
+        "notes": "Oregon is referenced as a state that adopted a predictive risk tool and later backed away, per NCCPR. Tool name, vendor, and current status unclear — needs verification.",
+        "source_label": "NCCPR",
+        "source_url": "https://www.nccprblog.org/2024/09/predictive-analytics-project-2025-of.html"
+      }
+    ]
+  },
+  "Pennsylvania": {
+    "status": "active",
+    "tools": [
+      {
+        "name": "Allegheny Family Screening Tool (AFST)",
+        "use_type": "Risk screening",
+        "vendor": "In-house (built by Auckland University of Technology)",
+        "year": "2016",
+        "status": "active",
+        "notes": "Used by Allegheny County DHS at hotline call screening. Assigns a risk score to maltreatment referrals to predict likelihood of future foster care entry. Has been under DOJ civil rights scrutiny. Considered the most prominent PRM in US child welfare.",
+        "source_label": "Allegheny County DHS",
+        "source_url": "https://www.alleghenycounty.us/Services/Human-Services-DHS/DHS-News-and-Events/Accomplishments-and-Innovations/Allegheny-Family-Screening-Tool"
+      }
+    ]
+  },
+  "Rhode Island": { "tools": [], "status": "none" },
+  "South Carolina": { "tools": [], "status": "none" },
+  "South Dakota": { "tools": [], "status": "none" },
+  "Tennessee": {
+    "status": "active",
+    "tools": [
+      {
+        "name": "Rapid Safety Feedback (RSF)",
+        "use_type": "Risk screening",
+        "vendor": "Eckerd Connects + Mindshare Technology",
+        "year": "~2015",
+        "status": "active",
+        "notes": "Confirmed user per Eckerd Connects.",
+        "source_label": "The Imprint",
+        "source_url": "https://imprintnews.org/child-welfare-2/rapid-safety-feedbacks-rapid-ascent"
+      }
+    ]
+  },
+  "Texas": { "tools": [], "status": "none" },
+  "Utah": { "tools": [], "status": "none" },
+  "Vermont": { "tools": [], "status": "none" },
+  "Virginia": { "tools": [], "status": "none" },
+  "Washington": { "tools": [], "status": "none" },
+  "West Virginia": { "tools": [], "status": "none" },
+  "Wisconsin": { "tools": [], "status": "none" },
+  "Wyoming": { "tools": [], "status": "none" }
+}
