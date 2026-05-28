@@ -1,35 +1,92 @@
 {
   "Alabama": { "tools": [], "status": "none" },
   "Alaska": { "tools": [], "status": "none" },
-  "Arizona": { "tools": [], "status": "none" },
-  "Arkansas": { "tools": [], "status": "none" },
-  "California": {
-    "status": "unknown",
+  "Arizona": {
+    "status": "active",
+    "significance": "Combines operational administrative AI (SOLVE AI, GenAI policy assistant) with research-based predictive analytics — a data-informed but cautious approach that stops short of real-time risk scoring at intake.",
     "tools": [
       {
-        "name": "AURA (SAS Institute) + County Algorithm",
+        "name": "SOLVE AI",
+        "use_type": "Documentation / admin",
+        "vendor": "IBM (consulting)",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Arizona DCS uses the SOLVE AI program to surface critical red flags in case files, identify missing or duplicate documents, and improve data integrity. AI automates uploading, analysis, and summarizing of case notes — reducing document upload times by up to 500%. Human caseworkers retain final decision-making authority.",
+        "source_label": "IBM / GovTech",
+        "source_url": "https://www.ibm.com/case-studies/arizona-dcs-consulting"
+      },
+      {
+        "name": "GenAI Policy Assistant",
+        "use_type": "Documentation / admin",
+        "vendor": "Unknown",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Arizona DCS has deployed GenAI-powered virtual assistants that help social workers and child support staff quickly search complex state policy and procedure databases. Designed to reduce time spent navigating administrative documentation.",
+        "source_label": "NASCIO / GovTech",
+        "source_url": "https://www.nascio.org/wp-content/uploads/2025/09/AZ_Operational-Efficiency.pdf"
+      },
+      {
+        "name": "Next Event Study (Mathematica research partnership)",
+        "use_type": "Risk screening",
+        "vendor": "Mathematica",
+        "year": "2023",
+        "status": "active",
+        "notes": "Arizona DCS partnered with Mathematica to conduct a Next Event Study analyzing how information gathered during hotline calls correlates with future maltreatment and impending danger. Used to inform state policy, understand neglect trends, and strengthen intake prioritization practices. Functions as a research and policy tool rather than a real-time operational risk scoring system.",
+        "source_label": "Arizona DCS / Mathematica, 2023",
+        "source_url": "https://dcs.az.gov/sites/default/files/DCS-Reports/ADCS_Next%20Event%20Study_June%202023.pdf"
+      }
+    ]
+  },
+  "Arkansas": { "tools": [], "status": "none" },
+  "California": {
+    "status": "active",
+    "significance": "Shows the full arc — a failed high false-positive experiment in 2014 led to a more transparent, university-partnered model a decade later.",
+    "tools": [
+      {
+        "name": "LA County Risk Stratification Model",
+        "use_type": "Risk screening",
+        "vendor": "In-house (LA County DCFS + Children's Data Network, USC)",
+        "year": "2021",
+        "status": "active",
+        "notes": "Launched August 2021 by LA County DCFS in partnership with the Children's Data Network at USC. Uses hundreds of coded data elements to sort investigations by probability of future system involvement. As of September 2024, DCFS confirmed the tool continues to show promise and remains in use. Separate from the earlier AURA experiment.",
+        "source_label": "LA County DCFS, September 2024",
+        "source_url": "https://lacounty.gov/2024/09/05/new-analysis-of-dcfs-data-shows-improvement-in-safety-with-use-of-data-informed-technology/"
+        },
+      {
+        "name": "AURA (Approach to Understanding Risk Assessment)",
         "use_type": "Risk screening",
         "vendor": "SAS Institute + In-house (LA County DCFS)",
-        "year": "~2021",
-        "status": "unknown",
-        "notes": "Los Angeles County adopted a predictive risk algorithm, then reportedly backed away. Current status unclear — needs verification.",
+        "year": "2014",
+        "status": "discontinued",
+        "notes": "Experimental pilot designed in collaboration with SAS Institute. Analyzed county-level databases to score likelihood of severe abuse or fatalities. Never used on actual cases — tested only on historical data. Discontinued after producing approximately 3,829 false positives against 171 correct high-risk identifications.",
         "source_label": "The Imprint",
-        "source_url": "https://imprintnews.org/child-welfare-2/the-foster-care-system-turns-to-big-data-promising-or-profiling/62359"
+        "source_url": "https://imprintnews.org/featured/uncharted-waters-data-analytics-and-child-protection-in-los-angeles/10867"
       }
     ]
   },
   "Colorado": {
-    "status": "unknown",
+    "status": "active",
+    "significance": "Home of the Douglas County Decision Aide — built by the same Auckland University of Technology team behind the Allegheny Family Screening Tool, making it one of the most studied county-level PRMs in the country.",
     "tools": [
       {
-        "name": "Predictive risk model (county-level)",
+        "name": "Douglas County Decision Aide (DCDA)",
         "use_type": "Risk screening",
-        "vendor": "Unknown",
-        "year": "~2022",
-        "status": "unknown",
-        "notes": "Larimer, Arapahoe, and Douglas counties referenced as active users in Allegheny County's 2024 research summary. Tool name and vendor unknown.",
-        "source_label": "Allegheny County Analytics, 2024",
-        "source_url": "https://analytics.alleghenycounty.us/wp-content/uploads/2024/05/24-ACDHS-04-Predictive-Risk-Algorithms.pdf"
+        "vendor": "In-house (developed in partnership with Auckland University of Technology)",
+        "year": "2019",
+        "status": "active",
+        "notes": "Deployed in early 2019 by Douglas County Department of Human Services. Assigns call-center screeners a risk score from 1 to 20 to help determine which maltreatment reports require investigation. Estimates likelihood of a child's removal within two years based on historical data including prior CPS reports and hospitalizations. Modeled on the Allegheny Family Screening Tool — same Auckland University of Technology research team. Has faced DOJ civil rights investigation over potential discrimination, including concerns about disproportionate flagging of parents with disabilities.",
+        "source_label": "Auckland University of Technology CSDA / Sentinel Colorado",
+        "source_url": "https://csda.aut.ac.nz/news-and-events/2020/douglas-county-decision-aide-methodology-document"
+      },
+      {
+        "name": "Colorado AI Act — Automated Decision-Making Regulation",
+        "use_type": "AI governance policy",
+        "vendor": "Colorado General Assembly",
+        "year": "2024",
+        "status": "active",
+        "notes": "Colorado passed broad AI legislation requiring transparency and accountability in automated decision-making for consequential decisions, including child welfare. Aims to prevent algorithmic discrimination.",
+        "source_label": "Ogletree / Colorado General Assembly",
+        "source_url": "https://ogletree.com/insights-resources/blog-posts/colorados-new-ai-act-targets-automated-decision-making-for-consequential-decisions/"
       }
     ]
   },
@@ -66,9 +123,25 @@
   },
   "Georgia": { "tools": [], "status": "none" },
   "Hawaii": { "tools": [], "status": "none" },
-  "Idaho": { "tools": [], "status": "none" },
+  "Idaho": {
+    "status": "active",
+    "significance": "First state in the nation to go live with a statewide predictive analytics model in child welfare — now being held up as a model for federal replication under ACF. (Idaho's former director is now running ACF and actively pushing this tool nationally).",
+    "tools": [
+      {
+        "name": "IDHW Predictive Analytics Model",
+        "use_type": "Risk screening",
+        "vendor": "Deloitte (Microsoft Dynamics + Azure)",
+        "year": "2026",
+        "status": "active",
+        "notes": "Idaho is the first state to implement a statewide predictive analytics model in child welfare. The system runs at intake when abuse or neglect is reported, scoring cases based on historical data points to help caseworkers triage and prioritize. Three modules: intake (risk scoring), supervision (case history and risk management), and family mapping (identifying family relationships). Former IDHW director Alex Adams, now ACF Assistant Secretary under the Trump administration, has cited Idaho as a national model and is actively promoting the tool's adoption in other states.",
+        "source_label": "Deloitte / StateScoop / Idaho Capital Sun",
+        "source_url": "https://www.deloitte.com/zm/en/Industries/government-public/case-studies/enabling-social-workers-to-ensure-child-safety-and-family-stability.html"
+      }
+    ]
+  },
   "Illinois": {
     "status": "discontinued",
+    "significance": "The cautionary tale — ended its PRM after a no-bid contract scandal and more than 4,100 false positives, including cases where flagged children later died.",
     "tools": [
       {
         "name": "Rapid Safety Feedback (RSF)",
@@ -136,14 +209,48 @@
   "Minnesota": { "tools": [], "status": "none" },
   "Mississippi": { "tools": [], "status": "none" },
   "Missouri": { "tools": [], "status": "none" },
-  "Montana": { "tools": [], "status": "none" },
+  "Montana": {
+    "status": "none",
+    "significance": "No child welfare AI tools identified. State passed AI-related child protection laws (CSAM deepfakes) that advocates fear could be preempted by Trump's 2025 AI executive order.",
+    "tools": []
+  },
   "Nebraska": { "tools": [], "status": "none" },
-  "Nevada": { "tools": [], "status": "none" },
+  "Nevada": {
+    "status": "active",
+    "significance": "Uses Family-Match for adoption placement — one of the few confirmed AI-powered family matching tools in the country — while PRM deployment remains unverified.",
+    "tools": [
+      {
+        "name": "Family-Match",
+        "use_type": "Family matching",
+        "vendor": "Family-Match (platform)",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Nevada DCFS uses Family-Match, a platform that leverages predictive analytics and algorithms to accelerate adoptions and match foster children with compatible families. Confirmed active deployment by Nevada DCFS.",
+        "source_label": "OpenMinds",
+        "source_url": "https://openminds.com/market-intelligence/news/nevada-dcfs-using-family-match-to-accelerate-adoptions/"
+      },
+      {
+        "name": "Predictive Risk Model (unconfirmed)",
+        "use_type": "Risk screening",
+        "vendor": "Unknown",
+        "year": "Unknown",
+        "status": "unconfirmed",
+        "notes": "Nevada is referenced alongside Colorado and Pennsylvania as deploying predictive analytics for case management, family mapping, and intake risk screening. No named tool or vendor has been confirmed in public sources. Needs direct verification with Nevada DCFS.",
+        "source_label": "StateScoop, 2025",
+        "source_url": "https://statescoop.com/child-welfare-agencies-predictive-risk-modeling/"
+      }
+    ]
+  },
   "New Hampshire": { "tools": [], "status": "none" },
   "New Jersey": { "tools": [], "status": "none" },
-  "New Mexico": { "tools": [], "status": "none" },
+  "New Mexico": { 
+    "status": "exploring",
+    "significance": "No confirmed AI or predictive risk tools identified. CYFD is modernizing its case management system through a 2024 RedMane Technology partnership, but this is infrastructure — not AI. Former caseworkers have raised concerns about over-reliance on structured decision-making tools. No operational AI or PRM tools confirmed. CYFD launched a public child welfare data dashboard in 2026 and has partnered with Chapin Hall on a machine learning pilot study in Doña Ana County — research-stage work rather than deployed tools.",
+    "tools": []
+  },
   "New York": {
     "status": "active",
+    "significance": "Subject of a major Markup investigation in May 2026 — one of the most scrutinized urban child welfare AI deployments in the country.",
     "tools": [
       {
         "name": "ACS Quality Assurance Algorithm",
@@ -190,22 +297,44 @@
     ]
   },
   "Oregon": {
-    "status": "unknown",
-    "tools": [
-      {
-        "name": "Predictive risk tool (name unknown)",
-        "use_type": "Risk screening",
-        "vendor": "Unknown",
-        "year": "~2018",
-        "status": "unknown",
-        "notes": "Oregon is referenced as a state that adopted a predictive risk tool and later backed away, per NCCPR. Tool name, vendor, and current status unclear — needs verification.",
-        "source_label": "NCCPR",
-        "source_url": "https://www.nccprblog.org/2024/09/predictive-analytics-project-2025-of.html"
-      }
-    ]
-  },
+      "status": "active",
+      "significance": "One of the few states to explicitly discontinue a PRM citing racial bias, returning to structured decision-making frameworks.",
+      "tools": [
+        {
+          "name": "Safety at Screening Tool",
+          "use_type": "Risk screening",
+          "vendor": "Adapted from Pennsylvania (vendor unknown)",
+          "year": "Discontinued 2022",
+          "status": "discontinued",
+          "notes": "Oregon DHS piloted the Safety at Screening Tool, inspired by the Allegheny Family Screening Tool. During hotline screening it generated two separate scores: likelihood of a future investigation and likelihood of foster care placement within two years, drawing from historical data in Oregon's statewide system (OR-Kids). Phased out mid-2022 after evaluations found the tool disproportionately flagged Black children and low-income families, raising civil rights and transparency concerns. Oregon has since returned to Structured Decision Making frameworks.",
+          "source_label": "Oregon DHS Safety at Screening Research Brief",
+          "source_url": "https://www.oregon.gov/odhs/data/orrai/safety-at-screening-research-brief.pdf"
+        },
+        {
+          "name": "The Contingent — Foster Family Matching Platform",
+          "use_type": "Family matching",
+          "vendor": "The Contingent (venture nonprofit) + Microsoft Cloud",
+          "year": "Active",
+          "status": "active",
+          "notes": "Oregon DHS collaborates with The Contingent, a venture nonprofit, to use cloud-based data and digital marketing to identify and match potential foster families with specific children in particular communities. Uses Microsoft Cloud for Nonprofit infrastructure.",
+          "source_label": "Microsoft Customer Story",
+          "source_url": "https://www.microsoft.com/en/customers/story/1625541988925138544-thecontingent-microsoftcloudfornonprofit-unitedstates"
+        },
+        {
+          "name": "Cardinality.ai — Juvenile Justice Records System",
+          "use_type": "Documentation / admin",
+          "vendor": "Cardinality.ai",
+          "year": "Active",
+          "status": "active",
+          "notes": "The Oregon Youth Authority partnered with Cardinality.ai to incorporate AI SaaS solutions for digitizing and streamlining juvenile justice information records.",
+          "source_label": "DMI / Oregon Youth Authority",
+          "source_url": "https://dminc.com/insight/oregon-youth-authority-awards-dmi-contract-to-modernize-juvenile-justice-information-system/"
+        }
+      ]
+    },
   "Pennsylvania": {
     "status": "active",
+    "significance": "Home of the most studied PRM in US child welfare — the AFST has generated more research, controversy, and federal scrutiny than any other tool.",
     "tools": [
       {
         "name": "Allegheny Family Screening Tool (AFST)",
@@ -238,11 +367,86 @@
     ]
   },
   "Texas": { "tools": [], "status": "none" },
-  "Utah": { "tools": [], "status": "none" },
+  "Utah": {
+    "status": "active",
+    "significance": "First state to deploy Lyssn AI speech analysis statewide — a workforce quality assurance model that other states including Wyoming have since adopted.",
+    "tools": [
+      {
+        "name": "Lyssn — AI Speech Analysis",
+        "use_type": "Documentation / admin",
+        "vendor": "Lyssn",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Utah Department of Human Services was the first state to deploy Lyssn statewide, using AI speech analysis to assess the quality of social services provided to families and evaluate whether caseworkers are using evidence-based, preventative practices as required by federal law.",
+        "source_label": "Lyssn",
+        "source_url": "https://www.lyssn.io/resources/insights/utah-first-to-use-ai-state-wide-to-improve-social-services/"
+      },
+      {
+        "name": "Virtual Social Work Trainer (VSWT)",
+        "use_type": "Documentation / admin",
+        "vendor": "University of Utah Social Research Institute",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "AI-assisted virtual role-play training tool developed by the University of Utah. Features simulated clients involved in child welfare scenarios, allowing caseworkers to practice and improve interviewing skills in a safe environment before working with real families.",
+        "source_label": "University of Utah",
+        "source_url": "https://attheu.utah.edu/artificial-intelligence/using-ai-to-train-future-social-workers/"
+      }
+    ]
+  },
   "Vermont": { "tools": [], "status": "none" },
   "Virginia": { "tools": [], "status": "none" },
-  "Washington": { "tools": [], "status": "none" },
+  "Washington": {
+    "status": "active",
+    "significance": "Made a deliberate policy choice to restrict AI to administrative support, explicitly rejecting predictive risk scoring on equity grounds.",
+    "tools": [
+      {
+        "name": "DCYF Administrative AI / Documentation Tools",
+        "use_type": "Documentation / admin",
+        "vendor": "In-house (Washington DCYF)",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Washington DCYF has deliberately avoided using AI for high-stakes removal decisions or predictive risk scoring due to concerns about racial disparities and algorithmic discrimination. Instead, the agency uses AI tools to reduce administrative burdens — transcribing and summarizing case notes, auto-populating forms — so caseworkers can spend more time on home visits. DCYF also uses advanced reporting tools to track racial disproportionality in child welfare outcomes, with targeted focus on American Indian/Alaska Native and Black children.",
+        "source_label": "ACLU of Washington / DCYF / HHS ASPE",
+        "source_url": "https://www.aclu-wa.org/news/automated-decision-systems-child-welfare-predictive-analytics-tools/"
+      },
+      {
+        "name": "AI Task Force — Attorney General's Office",
+        "use_type": "AI governance policy",
+        "vendor": "Washington State Attorney General's Office",
+        "year": "Active",
+        "status": "active",
+        "notes": "The Washington State Attorney General established an AI Task Force to evaluate algorithmic discrimination and develop guidelines for state-operated AI systems. Lawmakers have also championed SB 5356, a transparency bill requiring government agencies to disclose automated systems in use and prohibit algorithmic discrimination.",
+        "source_label": "Washington State AG Office",
+        "source_url": "https://www.atg.wa.gov/aitaskforce"
+      }
+    ]
+  },
   "West Virginia": { "tools": [], "status": "none" },
   "Wisconsin": { "tools": [], "status": "none" },
-  "Wyoming": { "tools": [], "status": "none" }
+  "Wyoming": {
+    "status": "active",
+    "significance": "No predictive risk model in use — instead uses AI for workforce quality assurance and foster care case management, representing a different model of AI integration.",
+    "tools": [
+      {
+        "name": "Lyssn",
+        "use_type": "Documentation / admin",
+        "vendor": "Lyssn",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Wyoming DFS partners with Lyssn, an AI platform that analyzes social worker conversations with families and provides feedback on motivational interviewing techniques. Used for workforce training and quality assurance rather than case decision-making.",
+        "source_label": "Lyssn",
+        "source_url": "https://www.lyssn.io/resources/insights/the-use-of-ai-in-child-welfare-services-5-common-concerns/"
+      },
+      {
+        "name": "Cardinality.ai — Foster Care Case Management",
+        "use_type": "Case management",
+        "vendor": "Cardinality.ai",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Wyoming uses a modular foster care information system developed by Cardinality.ai to streamline case management and improve communication between caseworkers, biological parents, and foster families. Same vendor confirmed in Oregon's juvenile justice system.",
+        "source_label": "Cardinality.ai",
+        "source_url": "https://www.cardyai.com/articles-foster-care-whitepaper"
+      }
+    ]
+  }
 }
