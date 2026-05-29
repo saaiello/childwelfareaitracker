@@ -4,445 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Child Welfare AI Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --color-active: #C0392B;
-      --color-active-hover: #A93226;
-      --color-discontinued: #7F8C8D;
-      --color-discontinued-hover: #6C7A7D;
-      --color-unknown: #D4AC0D;
-      --color-unknown-hover: #B7950B;
-      --color-none: #D6D3CB;
-      --color-none-hover: #BDB9AF;
-      --color-selected-stroke: #1a1a18;
-
-      --text-primary: #1a1a18;
-      --text-secondary: #5F5E5A;
-      --text-tertiary: #888780;
-      --bg-primary: #ffffff;
-      --bg-secondary: #F7F6F2;
-      --bg-page: #F0EEE8;
-      --border: rgba(0,0,0,0.10);
-      --border-strong: rgba(0,0,0,0.18);
-      --radius-md: 8px;
-      --radius-lg: 12px;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg-page);
-      color: var(--text-primary);
-      min-height: 100vh;
-    }
-
-    /* ── Header ── */
-    header {
-      background: var(--bg-primary);
-      border-bottom: 0.5px solid var(--border);
-      padding: 1.1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .header-title {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--text-primary);
-      letter-spacing: -.01em;
-    }
-
-    .header-sub {
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin-top: 2px;
-    }
-
-    .header-tag {
-      font-size: 11px;
-      color: var(--text-tertiary);
-      border: 0.5px solid var(--border-strong);
-      border-radius: 20px;
-      padding: 4px 12px;
-    }
-
-    /* ── Main layout ── */
-    main {
-      max-width: 1060px;
-      margin: 0 auto;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    /* ── Map card ── */
-    .map-card {
-      background: var(--bg-primary);
-      border: 0.5px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem 1.25rem 1rem;
-    }
-
-    #map-svg {
-      width: 100%;
-      display: block;
-    }
-
-    .state-path {
-      stroke: #fff;
-      stroke-width: 0.6;
-      cursor: pointer;
-      transition: opacity .12s;
-    }
-    .state-path:hover { opacity: .78; stroke-width: 1.4; }
-    .state-path.selected { stroke: var(--color-selected-stroke); stroke-width: 1.8; }
-
-    /* ── Legend ── */
-    .legend {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 20px;
-      margin-top: .9rem;
-      padding-top: .9rem;
-      border-top: 0.5px solid var(--border);
-      align-items: center;
-    }
-
-    .leg-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 12px;
-      color: var(--text-secondary);
-    }
-
-    .leg-swatch {
-      width: 13px;
-      height: 13px;
-      border-radius: 3px;
-      flex-shrink: 0;
-    }
-
-    .leg-hint {
-      margin-left: auto;
-      font-size: 11px;
-      color: var(--text-tertiary);
-    }
-
-    /* ── Detail panel ── */
-    .detail-panel {
-      background: var(--bg-primary);
-      border: 0.5px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      min-height: 120px;
-      transition: all .2s;
-    }
-
-    .panel-default {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2.5rem;
-      color: var(--text-tertiary);
-      font-size: 13px;
-    }
-
-    .panel-content {
-      display: none;
-    }
-
-    .panel-header {
-      padding: 1rem 1.25rem .75rem;
-      border-bottom: 0.5px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .panel-state-name {
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: -.01em;
-    }
-
-    .panel-status-badge {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      flex-shrink: 0;
-    }
-
-    .badge-active { background: #FDECEA; color: #922B21; }
-    .badge-discontinued { background: #F2F3F4; color: #5D6D7E; }
-    .badge-unknown { background: #FEF9E7; color: #7D6608; }
-    .badge-none { background: var(--bg-secondary); color: var(--text-tertiary); }
-
-    .panel-body {
-      padding: 1rem 1.25rem 1.25rem;
-    }
-
-    /* No tool state */
-    .no-tool-msg {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* Tool cards */
-    .tool-card {
-      background: var(--bg-secondary);
-      border-radius: var(--radius-md);
-      padding: 1rem 1.1rem;
-      margin-bottom: .75rem;
-    }
-
-    .tool-card:last-child { margin-bottom: 0; }
-
-    .tool-name {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: .6rem;
-    }
-
-    .tool-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px 20px;
-      margin-bottom: .75rem;
-    }
-
-    .meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .meta-label {
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      color: var(--text-tertiary);
-    }
-
-    .meta-value {
-      font-size: 12px;
-      color: var(--text-secondary);
-    }
-
-    .tool-notes {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: .75rem;
-    }
-
-    .tool-source {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 12px;
-      color: #1A6FB0;
-      text-decoration: none;
-      border: 0.5px solid #AACDE8;
-      border-radius: var(--radius-md);
-      padding: 4px 10px;
-      background: #EBF4FB;
-    }
-    .tool-source:hover { background: #D6EAF8; }
-
-    /* ── Data note ── */
-    .data-note {
-      font-size: 11px;
-      color: var(--text-tertiary);
-      line-height: 1.6;
-      text-align: center;
-      padding: .5rem 0 .25rem;
-    }
-
-    @media (max-width: 600px) {
-      header { padding: 1rem; }
-      main { padding: 1rem; }
-      .panel-state-name { font-size: 16px; }
-    }
-  </style>
 </head>
 <body>
 
-<header>
-  <div>
-    <div class="header-title">Child Welfare AI Tracker</div>
-    <div class="header-sub">Predictive risk models in use across the United States</div>
+<header class="site-header">
+  <div class="header-inner">
+    <div>
+      <div class="header-title">Child Welfare <span>AI Tracker</span></div>
+      <div class="header-sub">How artificial intelligence is being used in child welfare systems across the United States</div>
+    </div>
+    <span class="header-tag">In progress · Data being verified</span>
   </div>
-  <span class="header-tag">In progress · Data being verified</span>
 </header>
 
 <main>
-  <div class="map-card">
-    <svg id="map-svg" viewBox="0 0 960 600" aria-label="US map showing states with predictive risk models in child welfare"></svg>
+
+  <!-- Map -->
+  <div class="card map-card">
+    <svg id="map-svg" viewBox="0 0 960 600" aria-label="US map showing states with AI tools in child welfare">
+      <defs>
+        <pattern id="stripe-pattern" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="10" stroke="rgba(255,255,255,0.35)" stroke-width="4"/>
+        </pattern>
+      </defs>
+    </svg>
     <div class="legend">
       <div class="leg-item">
         <div class="leg-swatch" style="background:var(--color-active)"></div>
-        Active PRM
+        Active AI tools
       </div>
       <div class="leg-item">
         <div class="leg-swatch" style="background:var(--color-discontinued)"></div>
         Discontinued
       </div>
       <div class="leg-item">
-        <div class="leg-swatch" style="background:var(--color-unknown)"></div>
-        Unconfirmed / needs verification
+        <div class="leg-swatch" style="background:var(--color-exploring)"></div>
+        Exploring / pilot
       </div>
       <div class="leg-item">
         <div class="leg-swatch" style="background:var(--color-none)"></div>
-        No tool identified in public records
+        No tools identified
+      </div>
+      <div class="leg-item">
+        <div class="leg-swatch" style="background: repeating-linear-gradient(45deg, #888 0px, #888 2px, #ddd 2px, #ddd 8px)"></div>
+        A Home for Every Child signatory
       </div>
       <span class="leg-hint">Click any state for details</span>
     </div>
   </div>
 
-  <div class="detail-panel" id="detail-panel">
+  <!-- Detail panel -->
+  <div class="card detail-panel" id="detail-panel">
     <div class="panel-default" id="panel-default">
-      ← Click a state to see what predictive tools are in use
+      Click a state to see what AI tools are in use
     </div>
     <div class="panel-content" id="panel-content"></div>
   </div>
 
+  <!-- Data note -->
   <p class="data-note">
-    Data sourced from public records, agency websites, and journalism including The Markup, The Imprint, and NCCPR. Entries are research estimates — not official state determinations. Verify with state agency before use in formal contexts. Last updated May 2026.
+    A project by <a href="https://saaiello.github.io/child-welfare-news/" target="_blank">Child Welfare News</a> &middot;
+    Data sourced from public records, agency websites, and journalism including The Markup, The Imprint, and NCCPR &middot;
+    Last updated May 2026
   </p>
+
 </main>
 
-<script>
-const STATUS_COLOR = {
-  active: 'var(--color-active)',
-  discontinued: 'var(--color-discontinued)',
-  unknown: 'var(--color-unknown)',
-  none: 'var(--color-none)'
-};
-
-const STATUS_LABEL = {
-  active: 'Active PRM',
-  discontinued: 'Discontinued',
-  unknown: 'Unconfirmed',
-  none: 'No tool identified'
-};
-
-let stateData = {};
-let selectedState = null;
-
-function getColor(name) {
-  const d = stateData[name];
-  if (!d) return STATUS_COLOR.none;
-  return STATUS_COLOR[d.status] || STATUS_COLOR.none;
-}
-
-function badgeClass(status) {
-  return `panel-status-badge badge-${status || 'none'}`;
-}
-
-function renderPanel(name) {
-  const d = stateData[name];
-  const status = d ? d.status : 'none';
-  const tools = d ? d.tools : [];
-
-  let toolsHTML = '';
-
-  if (!tools || tools.length === 0) {
-    toolsHTML = `<p class="no-tool-msg">No predictive risk model has been identified in public records for <strong>${name}</strong>. This may reflect an absence of tools or a gap in available documentation. If you have a source, <a href="https://github.com" style="color:#1A6FB0">contributions are welcome</a>.</p>`;
-  } else {
-    toolsHTML = tools.map(t => `
-      <div class="tool-card">
-        <div class="tool-name">${t.name}</div>
-        <div class="tool-meta">
-          <div class="meta-item">
-            <span class="meta-label">Use type</span>
-            <span class="meta-value">${t.use_type}</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Vendor / built by</span>
-            <span class="meta-value">${t.vendor}</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Year adopted</span>
-            <span class="meta-value">${t.year}</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Status</span>
-            <span class="meta-value">${t.status.charAt(0).toUpperCase() + t.status.slice(1)}</span>
-          </div>
-        </div>
-        <p class="tool-notes">${t.notes}</p>
-        <a class="tool-source" href="${t.source_url}" target="_blank" rel="noopener">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          ${t.source_label}
-        </a>
-      </div>
-    `).join('');
-  }
-
-  return `
-    <div class="panel-header">
-      <div class="panel-state-name">${name}</div>
-      <span class="${badgeClass(status)}">${STATUS_LABEL[status] || 'No tool identified'}</span>
-    </div>
-    <div class="panel-body">${toolsHTML}</div>
-  `;
-}
-
-function selectState(name) {
-  selectedState = name;
-  d3.selectAll('.state-path').classed('selected', f => f.properties.name === name);
-  document.getElementById('panel-default').style.display = 'none';
-  const content = document.getElementById('panel-content');
-  content.style.display = 'block';
-  content.innerHTML = renderPanel(name);
-
-  // Scroll panel into view on mobile
-  document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}
-
-// Build map
-const svg = d3.select('#map-svg');
-const projection = d3.geoAlbersUsa().scale(1100).translate([480, 300]);
-const path = d3.geoPath(projection);
-
-Promise.all([
-  d3.json('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json'),
-  fetch('data/states.json').then(r => r.json())
-]).then(([us, data]) => {
-  stateData = data;
-  const features = topojson.feature(us, us.objects.states).features;
-
-  svg.selectAll('path')
-    .data(features)
-    .join('path')
-    .attr('class', 'state-path')
-    .attr('d', path)
-    .attr('fill', d => getColor(d.properties.name))
-    .on('click', (event, d) => {
-      const name = d.properties.name;
-      if (selectedState === name) return;
-      selectState(name);
-    });
-
-}).catch(() => {
-  document.querySelector('.map-card').innerHTML +=
-    '<p style="text-align:center;color:#922B21;padding:1.5rem;font-size:13px;">Map failed to load. Run from a local server or GitHub Pages — not directly from the file system.</p>';
-});
-</script>
+<script src="app.js"></script>
 </body>
 </html>

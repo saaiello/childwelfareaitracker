@@ -1,6 +1,7 @@
 {
   "Alabama": {
     "status": "none",
+    "acf_home_for_every_child": true,
     "significance": "Sticking strictly to a legacy, manual approach for risk assessment. While frontline staff are actively being trained on the broad ethics of AI in social work, the state has not contracted or deployed automated decision-making or predictive analytics tools within its child welfare division.",
     "tools": []
   },
@@ -47,6 +48,7 @@
   },
   "Arkansas": {
     "status": "active",
+    "acf_home_for_every_child": true,
     "significance": "Abandoned a $12 million child welfare IT upgrade (ARfocus) in 2025 after two years — still running on legacy CHRIS system. Despite infrastructure struggles, confirmed Binti deployment for foster care licensing.",
     "tools": [
       {
@@ -151,6 +153,7 @@
   },
   "Delaware": {
     "status": "active",
+    "acf_home_for_every_child": true,
     "significance": "FOCUS system won a NASCIO award and is one of the most formally recognized AI-integrated case management deployments in child welfare. Delaware also became the first state to partner with OpenAI on a certification program — signaling broader AI ambition beyond child welfare.",
     "tools": [
       {
@@ -255,7 +258,7 @@
   },
   "Idaho": {
     "status": "active",
-    "significance": "First state in the nation to go live with a statewide predictive analytics model in child welfare — now being held up as a model for federal replication under ACF. (Idaho's former director is now running ACF and actively pushing this tool nationally).",
+    "significance": "First state in the nation to go live with a statewide predictive analytics model in child welfare. Former IDHW director Alex Adams, now ACF Assistant Secretary, is actively promoting the Idaho model for national replication.",
     "tools": [
       {
         "name": "IDHW Predictive Analytics Model",
@@ -390,6 +393,7 @@
   },
   "Kansas": {
     "status": "active",
+    "acf_home_for_every_child": true,
     "significance": "Building AI into its next-generation case management system from the ground up — one of few states to explicitly integrate chatbot AI and NLP into its CCWIS infrastructure rather than adding AI as a separate tool.",
     "tools": [
       {
@@ -416,6 +420,7 @@
   },
   "Kentucky": {
     "status": "active",
+    "acf_home_for_every_child": true,
     "significance": "Binti deployed statewide for kinship family finding — one of the more intentional uses of the platform focused on keeping children connected to family rather than matching with strangers. Also home to one of few university-based VR training programs for child welfare investigators.",
     "tools": [
       {
@@ -442,6 +447,7 @@
   },
   "Louisiana": {
     "status": "active",
+    "acf_home_for_every_child": true,
     "significance": "One of the more active AI deployments in the South — confirmed RSF, hotline AI sentiment monitoring, and an Accenture/AWS cloud modernization partnership. Governor temporarily froze new AI procurement in late 2025 pending CIO approval protocols.",
     "tools": [
       {
@@ -494,6 +500,7 @@
   },
   "Maryland": {
     "status": "active",
+    "acf_home_for_every_child": true,
     "significance": "One of few states confirmed using a major commercial LLM (Anthropic Claude) for family services navigation. Also a Binti user — fifth confirmed state — focused on kinship placement.",
     "tools": [
       {
@@ -597,6 +604,7 @@
   },
   "Mississippi": {
     "status": "none",
+    "acf_home_for_every_child": true,
     "significance": "No AI or PRM tools confirmed. Mississippi is under a federal consent decree (Olivia Y.) for child welfare failures — a context that makes AI adoption particularly high-stakes and politically sensitive.",
     "tools": []
   },
@@ -634,6 +642,7 @@
   },
   "Nebraska": {
     "status": "active",
+    "acf_home_for_every_child": true,
     "significance": "PRM use referenced in policy literature but unconfirmed. More notable for the Boys Town AI caregiver training partnership — an innovative workforce development approach using extended reality tools.",
     "tools": [
       {
@@ -780,6 +789,7 @@
   },
   "Ohio": {
     "status": "active",
+    "acf_home_for_every_child": true,
     "significance": "Confirmed RSF user since ~2015. Also partnered with Eckerd on early cluster analysis research for child welfare risk profiling. Current SACWIS system is standard case management — no additional AI tools confirmed beyond RSF.",
     "tools": [
       {
@@ -796,6 +806,7 @@
   },
   "Oklahoma": {
     "status": "active",
+    "acf_home_for_every_child": true,
     "significance": "One of the original Rapid Safety Feedback states — recognized by Drexel's Analytics 50 in 2016 for its implementation. Also one of few states with a named public-facing AI chatbot (Hope) for human services.",
     "tools": [
       {
@@ -874,11 +885,13 @@
   },
   "Rhode Island": {
     "status": "none",
+    "acf_home_for_every_child": true,
     "significance": "No AI or PRM tools confirmed in child welfare. DHS has proposed AI call center modernization for eligibility routing. AI Task Force released a 2026 action plan prioritizing education and workforce over family surveillance.",
     "tools": []
   },
   "South Carolina": {
     "status": "active",
+    "acf_home_for_every_child": true,
     "significance": "No PRM in use — but one of few states with a confirmed algorithmic service recommendation system. The Praed Foundation partnership uses FAST and CANS inputs to algorithmically match families to targeted services, a less controversial but meaningful AI application.",
     "tools": [
       {
@@ -927,6 +940,7 @@
   },
   "Texas": {
     "status": "active",
+    "acf_home_for_every_child": true,
     "significance": "One of the largest child welfare systems in the country — and one that has explicitly resisted predictive risk modeling on policy grounds while still integrating AI for administrative and prevention purposes.",
     "tools": [
       {
@@ -953,6 +967,7 @@
   },
   "Utah": {
     "status": "active",
+    "acf_home_for_every_child": true,
     "significance": "First state to deploy Lyssn AI speech analysis statewide — a workforce quality assurance model that other states including Wyoming have since adopted.",
     "tools": [
       {
@@ -1046,6 +1061,7 @@
   },
   "West Virginia": {
     "status": "active",
+    "acf_home_for_every_child": true,
     "significance": "Launched COMET via Cardinality.ai in 2025 following a critical federal OIG audit on CPS non-compliance — one of few states where AI adoption was directly driven by federal accountability pressure rather than proactive modernization.",
     "tools": [
       {
