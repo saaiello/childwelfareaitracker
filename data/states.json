@@ -1,6 +1,14 @@
 {
-  "Alabama": { "tools": [], "status": "none" },
-  "Alaska": { "tools": [], "status": "none" },
+  "Alabama": {
+    "status": "none",
+    "significance": "Sticking strictly to a legacy, manual approach for risk assessment. While frontline staff are actively being trained on the broad ethics of AI in social work, the state has not contracted or deployed automated decision-making or predictive analytics tools within its child welfare division.",
+    "tools": []
+  },
+  "Alaska": {
+    "status": "none",
+    "significance": "No AI or predictive risk tools confirmed. Child welfare priorities are focused on ICWA compliance and tribal collaboration given severe overrepresentation of Alaska Native children in foster care — a context that makes algorithmic risk scoring particularly fraught.",
+    "tools": []
+  },
   "Arizona": {
     "status": "active",
     "significance": "Combines operational administrative AI (SOLVE AI, GenAI policy assistant) with research-based predictive analytics — a data-informed but cautious approach that stops short of real-time risk scoring at intake.",
@@ -37,7 +45,22 @@
       }
     ]
   },
-  "Arkansas": { "tools": [], "status": "none" },
+  "Arkansas": {
+    "status": "active",
+    "significance": "Abandoned a $12 million child welfare IT upgrade (ARfocus) in 2025 after two years — still running on legacy CHRIS system. Despite infrastructure struggles, confirmed Binti deployment for foster care licensing.",
+    "tools": [
+      {
+        "name": "Binti — Foster Care Licensing Platform",
+        "use_type": "Family matching",
+        "vendor": "Binti",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Arkansas DHS uses Binti to streamline foster care licensing and placement processes. Same vendor confirmed in Hawaii. Automates workflow and documentation for resource caregiver licensing.",
+        "source_label": "Binti Blog",
+        "source_url": "https://binti.com/blog/the-answer-and-binti-are-shaping-the-future-of-foster-care-in-arkansas/"
+      }
+    ]
+  },
   "California": {
     "status": "active",
     "significance": "Shows the full arc — a failed high false-positive experiment in 2014 led to a more transparent, university-partnered model a decade later.",
@@ -91,23 +114,60 @@
     ]
   },
   "Connecticut": {
-    "status": "active",
+    "status": "discontinued",
+    "significance": "Discontinued RSF in 2019 citing staffing shortages — one of the few RSF states to exit the program. Has since passed landmark AI transparency legislation requiring DCF to inventory and apply human accountability rules to any algorithmic systems. Actively exploring bias-resistant PRM through UConn Health research.",
     "tools": [
       {
         "name": "Rapid Safety Feedback (RSF)",
         "use_type": "Risk screening",
         "vendor": "Eckerd Connects + Mindshare Technology",
-        "year": "~2015",
+        "year": "Discontinued 2019",
+        "status": "discontinued",
+        "notes": "Connecticut DCF previously used RSF for child welfare screening. Discontinued in 2019 citing staffing shortages. DCF refused to release source code, keeping it as a trade secret. Has not returned to automated predictive screening.",
+        "source_label": "AP / Fox61",
+        "source_url": "https://apnews.com/article/technology-politics-connecticut-state-government-civil-rights-177f4f046a55f85ae795b8a09f6e28f4"
+      },
+      {
+        "name": "Connecticut AI Responsibility and Transparency Act",
+        "use_type": "AI governance policy",
+        "vendor": "Connecticut General Assembly",
+        "year": "2023",
         "status": "active",
-        "notes": "Confirmed user per Eckerd Connects and Imprint reporting. RSF uses data analytics to flag high-risk cases for intensive caseworker monitoring and coaching.",
-        "source_label": "The Imprint",
-        "source_url": "https://imprintnews.org/child-welfare-2/rapid-safety-feedbacks-rapid-ascent"
+        "notes": "Sweeping legislation requiring state agencies including DCF to inventory, assess, and apply human accountability rules to any algorithmic or automated systems. DCF also maintains a Client Data Protections and Client Data Dignity Policy requiring all AI and data modeling to align with racial justice principles.",
+        "source_label": "CT Mirror / Stateline",
+        "source_url": "https://ctmirror.org/2026/05/01/artificial-intelligence-house-regulation-passage-ct/"
+      },
+      {
+        "name": "UConn Health / Connecticut Children's Clinical Algorithm (research)",
+        "use_type": "Risk screening",
+        "vendor": "UConn Health + Connecticut Children's + Hartford Healthcare",
+        "year": "2023",
+        "status": "exploring",
+        "notes": "Researchers developing a clinical algorithm to help pediatricians identify symptoms of child maltreatment by cross-referencing patient, provider, and visit data. Explicitly designed to combat bias. Research phase only — not operationally deployed.",
+        "source_label": "UConn Today, April 2023",
+        "source_url": "https://today.uconn.edu/2023/04/uconn-researchers-developing-algorithm-to-combat-bias-in-identifying-child-maltreatment/"
       }
     ]
   },
-  "Delaware": { "tools": [], "status": "none" },
+  "Delaware": {
+    "status": "active",
+    "significance": "FOCUS system won a NASCIO award and is one of the most formally recognized AI-integrated case management deployments in child welfare. Delaware also became the first state to partner with OpenAI on a certification program — signaling broader AI ambition beyond child welfare.",
+    "tools": [
+      {
+        "name": "FOCUS (For Our Children's Ultimate Success)",
+        "use_type": "Case management",
+        "vendor": "Salesforce Einstein AI",
+        "year": "2018",
+        "status": "active",
+        "notes": "Launched in 2018 by Delaware DSCYF. Cloud-based case management system integrating Salesforce Einstein AI to optimize workflows — digitizing handwritten field notes, automating client referrals, and interpreting complex policies. NASCIO award winner. Explicitly not used for removal decisions — human judgment required for all consequential family decisions.",
+        "source_label": "NASCIO Awards",
+        "source_url": "https://www.nascio.org/awards-library/awards/focus-for-our-childrens-ultimate-success/"
+      }
+    ]
+  },
   "Florida": {
     "status": "active",
+    "significance": "One of the most diverse AI deployments in child welfare — RSF for risk screening, SAS/Mindshare for perpetrator network analysis, Binti for licensing, and VR training for workforce development. Among the most active states in the dataset.",
     "tools": [
       {
         "name": "Rapid Safety Feedback (RSF)",
@@ -115,14 +175,84 @@
         "vendor": "Eckerd Connects + Mindshare Technology",
         "year": "~2012",
         "status": "active",
-        "notes": "Hillsborough County is the origin site of RSF. Uses predictive analytics to flag high-risk cases. Eckerd Connects serves as the Community-Based Lead Agency for child welfare in Hillsborough, Pasco, and Pinellas counties.",
+        "notes": "Hillsborough County is the origin site of RSF. Uses predictive analytics to flag high-risk cases for intensive caseworker monitoring and coaching. Eckerd Connects serves as the Community-Based Lead Agency for child welfare in Hillsborough, Pasco, and Pinellas counties.",
         "source_label": "Eckerd Connects",
         "source_url": "https://eckerd.org/eckerd-rapid-safety-feedback-highlighted-national-report-commission-eliminate-child-abuse-neglect-fatalities/"
+      },
+      {
+        "name": "SAS/Mindshare Perpetrator Network Analysis",
+        "use_type": "Risk screening",
+        "vendor": "SAS Institute + Mindshare Technology",
+        "year": "~2017",
+        "status": "active",
+        "notes": "Florida uses SAS and Mindshare platforms to map perpetrator relationships and historical behavior, identifying hidden threats from adults outside the immediate household. Cross-system data linking merges child abuse records with birth/death records and public assistance data. Associative analysis flags risk multipliers including prior removals for substance abuse.",
+        "source_label": "The Imprint / SAS",
+        "source_url": "https://imprintnews.org/featured/perpetrator-networks-key-predicting-child-abuse/24479"
+      },
+      {
+        "name": "Binti — Foster Care Licensing Platform",
+        "use_type": "Family matching",
+        "vendor": "Binti",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Florida DCF uses Binti to automate foster and adoptive family licensing, streamline background checks, and help prospective caregivers navigate the application process. Third confirmed state using Binti alongside Hawaii and Arkansas.",
+        "source_label": "WTSP / RedMane",
+        "source_url": "https://www.wtsp.com/article/news/investigations/10-investigates/foster-kids-placement-ai-helping-manage-social-work-florida/67-f76e7fc0-aa47-44e2-a793-3861bc53827f"
+      },
+      {
+        "name": "FSU FICW AI-Powered VR Training",
+        "use_type": "Documentation / admin",
+        "vendor": "Florida Institute for Child Welfare (FSU)",
+        "year": "2025",
+        "status": "active",
+        "notes": "Florida State University's College of Social Work and Florida Institute for Child Welfare use AI-powered virtual reality headsets to train child welfare caseworkers. Simulates high-stakes field interactions in a safe environment. Launched February 2025.",
+        "source_label": "FSU News, February 2025",
+        "source_url": "https://news.fsu.edu/news/science-technology/2025/02/18/immersive-learning-fsu-college-of-social-work-to-launch-ai-powered-tool-to-enhance-child-welfare-education/"
       }
     ]
   },
-  "Georgia": { "tools": [], "status": "none" },
-  "Hawaii": { "tools": [], "status": "none" },
+  "Georgia": {
+    "status": "active",
+    "significance": "No PRM in use — focused on communication and coordination AI. Georgia Communicare is one of the more intentional caseworker-family communication platforms in the dataset, directly connecting all parties in a child welfare case.",
+    "tools": [
+      {
+        "name": "Georgia Communicare",
+        "use_type": "Case management",
+        "vendor": "Cardinality.ai",
+        "year": "2024",
+        "status": "active",
+        "notes": "Launched May 2024 by Georgia DHS and DFCS. AI-powered platform connecting caseworkers, foster parents, biological parents, and CASA volunteers. Streamlines communication, manages family visits, and integrates with the state's Georgia SHINES database. Same vendor (Cardinality.ai) confirmed in Oregon and Wyoming.",
+        "source_label": "Georgia DHS / Cardinality.ai",
+        "source_url": "https://dhs.georgia.gov/press-releases/2024-05-23/dhs-celebrates-national-foster-care-month-launch-new-child-welfare"
+      }
+    ]
+  },
+  "Hawaii": {
+    "status": "active",
+    "significance": "No predictive risk model in use — instead uses AI for foster family licensing and court navigation support, representing an administrative and access-focused approach to AI in child welfare.",
+    "tools": [
+      {
+        "name": "Binti — Foster Parent Licensing Portal",
+        "use_type": "Family matching",
+        "vendor": "Binti",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Hawaii DHS uses Binti to modernize the licensing process for resource caregivers. Automates workflow, document collection, and data matching to pair foster children with homes faster than traditional paper-based methods.",
+        "source_label": "GovTech",
+        "source_url": "https://www.govtech.com/civic/hawaii-launches-foster-portal-to-improve-application-process"
+      },
+      {
+        "name": "KolokoloChat",
+        "use_type": "Documentation / admin",
+        "vendor": "Hawaii State Judiciary",
+        "year": "2025",
+        "status": "active",
+        "notes": "AI-powered chatbot launched by the Hawaii State Judiciary in May 2025 to help families and patrons navigate the court system. Assists users in finding legal forms, court rules, and child-related resources. Serves families involved in child welfare proceedings.",
+        "source_label": "Hawaii State Judiciary",
+        "source_url": "https://www.courts.state.hi.us/news_and_reports/2025/05/hawai%CA%BBi-state-judiciary-launches-ai-powered-kolokolochat-for-law-day-2025"
+      }
+    ]
+  },
   "Idaho": {
     "status": "active",
     "significance": "First state in the nation to go live with a statewide predictive analytics model in child welfare — now being held up as a model for federal replication under ACF. (Idaho's former director is now running ACF and actively pushing this tool nationally).",
@@ -140,8 +270,8 @@
     ]
   },
   "Illinois": {
-    "status": "discontinued",
-    "significance": "The cautionary tale — ended its PRM after a no-bid contract scandal and more than 4,100 false positives, including cases where flagged children later died.",
+    "status": "active",
+    "significance": "The cautionary tale on PRMs — ended RSF in 2017 after 4,100+ false positives and a no-bid contract scandal. Has since pivoted to administrative AI with multiple confirmed deployments, becoming one of the more active states on non-PRM AI adoption.",
     "tools": [
       {
         "name": "Rapid Safety Feedback (RSF)",
@@ -149,14 +279,45 @@
         "vendor": "Eckerd Connects + Mindshare Technology",
         "year": "2016–2017",
         "status": "discontinued",
-        "notes": "Program ended after a scandal involving a no-bid contract, thousands of false positives, and high-profile child deaths not flagged by the system. More than 4,100 Illinois children were assigned a 90%+ probability of death or injury.",
+        "notes": "Program ended after a scandal involving a no-bid contract, thousands of false positives, and high-profile child deaths not flagged by the system. More than 4,100 Illinois children were assigned a 90%+ probability of death or injury. Discontinued 2017.",
         "source_label": "GovTech / Chicago Tribune",
         "source_url": "https://govtech.com/health/Illinois-Ends-Child-Abuse-Prediction-Program.html"
+      },
+      {
+        "name": "NLP Case Note Summarization",
+        "use_type": "Documentation / admin",
+        "vendor": "Unknown",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Illinois DCFS uses Natural Language Processing software to help caseworkers search, interpret, and extract insights from complex narrative case notes, reducing administrative burden.",
+        "source_label": "GovTech",
+        "source_url": "https://www.govtech.com/computing/illinois-adopts-natural-language-processing-tech-for-child-welfare"
+      },
+      {
+        "name": "BEACON — Centralized Behavioral Health Portal",
+        "use_type": "Case management",
+        "vendor": "Unknown",
+        "year": "2025",
+        "status": "active",
+        "notes": "Illinois BEACON initiative uses AI to simplify and streamline access to behavioral and mental health services for children and families involved in child welfare. Centralizes service navigation across agencies.",
+        "source_label": "NASCIO / Route Fifty",
+        "source_url": "https://www.route-fifty.com/digital-government/2025/06/inside-illinois-journey-build-centralized-platform-child-welfare-services/405991/"
+      },
+      {
+        "name": "Ally-IL",
+        "use_type": "Documentation / admin",
+        "vendor": "Unknown",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "AI-integrated virtual collaboration app deployed by Illinois DCFS to help caseworkers connect with youth and their support networks. First-of-its-kind communication platform for child welfare.",
+        "source_label": "Riverbender / Illinois DCFS",
+        "source_url": "https://www.riverbender.com/news/details/illinois-dcfs-launches-allyil--firstofitskind-app-to-enhance-communication-and-collaboration-to-support-youth-and-families-79144.cfm"
       }
     ]
   },
   "Indiana": {
     "status": "active",
+    "significance": "One of the most policy-mature states in the dataset — confirmed RSF user, formal AI governance policy (HR-3-11) prohibiting AI as a decision-maker, and a pioneer in VR workforce training. A model for how to adopt AI with explicit guardrails.",
     "tools": [
       {
         "name": "Rapid Safety Feedback (RSF) + State AI Policy (HR-3-11)",
@@ -167,14 +328,121 @@
         "notes": "Confirmed RSF user. In March 2026, Indiana DCS issued formal AI use policy HR-3-11 — one of the first states to do so. Policy explicitly prohibits AI as a decision-making tool and bars entry of confidential case information into AI tools.",
         "source_label": "Indiana DCS Policy HR-3-11",
         "source_url": "https://www.in.gov/dcs/files/HR-3-11.pdf"
+      },
+      {
+        "name": "INvest — Salesforce Case Management System",
+        "use_type": "Case management",
+        "vendor": "Salesforce + MuleSoft",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Indiana DCS uses INvest, a cloud-based case management platform built on Salesforce, with MuleSoft APIs connecting health and immunization records. Includes NLP and dictation tools to assist caseworkers with field documentation.",
+        "source_label": "MuleSoft Case Study",
+        "source_url": "https://www.mulesoft.com/case-studies/api/indiana-department-child-services"
+      },
+      {
+        "name": "VR Worker Training Simulations",
+        "use_type": "Documentation / admin",
+        "vendor": "Unknown",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Indiana DCS pioneered the use of Virtual Reality simulations for prospective child welfare employees, exposing applicants to real-world home scenarios before hire. Has successfully reduced family case manager turnover.",
+        "source_label": "StateScoop",
+        "source_url": "https://statescoop.com/indiana-virtual-reality-kevin-jones-child-welfare/"
       }
     ]
   },
-  "Iowa": { "tools": [], "status": "none" },
-  "Kansas": { "tools": [], "status": "none" },
-  "Kentucky": { "tools": [], "status": "none" },
+  "Iowa": {
+    "status": "active",
+    "acf_home_for_every_child": true,
+    "significance": "ACF called Iowa's VISION system a national roadmap for child welfare IT modernization — built with Google Public Sector and positioned as a model for other states. Also home to novel University of Iowa research using AI cameras to detect physical abuse in real time.",
+    "tools": [
+      {
+        "name": "VISION — Child Welfare Information System",
+        "use_type": "Case management",
+        "vendor": "Google Public Sector",
+        "year": "2026",
+        "status": "active",
+        "notes": "Iowa HHS partnered with Google Public Sector to build VISION, a new Comprehensive Child Welfare Information System. ACF called it a first-of-its-kind partnership and a national roadmap for child welfare IT. Uses modern data integration to streamline casework and assist social workers in making informed decisions. Not a predictive risk model — focused on case management infrastructure.",
+        "source_label": "Iowa Governor's Office / ACF (February 2026)",
+        "source_url": "https://governor.iowa.gov/press-release/2026-02-23/iowa-acf-partner-transform-modernize-child-welfare-technology"
+      },
+      {
+        "name": "University of Iowa AI Camera — Physical Abuse Detection (research)",
+        "use_type": "Risk screening",
+        "vendor": "University of Iowa College of Engineering",
+        "year": "2024",
+        "status": "exploring",
+        "notes": "University of Iowa researchers are developing an AI-powered camera system that tracks physical motion to detect physical abuse in real time. Designed to alert caregivers or authorities when violent behavior escalates. Currently in research phase — not deployed operationally in child welfare investigations.",
+        "source_label": "University of Iowa Engineering / Iowa Capital Dispatch (2024)",
+        "source_url": "https://engineering.uiowa.edu/news-all/2024/10/iowa-professors-developing-ai-camera-detect-physical-abuse"
+      },
+      {
+        "name": "Predictive Risk Model (unconfirmed)",
+        "use_type": "Risk screening",
+        "vendor": "Unknown",
+        "year": "Unknown",
+        "status": "unconfirmed",
+        "notes": "Iowa HHS is referenced in policy literature as using or exploring predictive risk modeling alongside SDM. No named tool or vendor confirmed in public sources. Needs direct verification with Iowa HHS.",
+        "source_label": "StateScoop, 2025",
+        "source_url": "https://statescoop.com/child-welfare-agencies-predictive-risk-modeling/"
+      }
+    ]
+  },
+  "Kansas": {
+    "status": "active",
+    "significance": "Building AI into its next-generation case management system from the ground up — one of few states to explicitly integrate chatbot AI and NLP into its CCWIS infrastructure rather than adding AI as a separate tool.",
+    "tools": [
+      {
+        "name": "CCWIS — Chatbot AI and Natural Language Processing",
+        "use_type": "Documentation / admin",
+        "vendor": "Unknown (DCF-led modernization project)",
+        "year": "In development (2025)",
+        "status": "active",
+        "notes": "Kansas DCF is building a new Comprehensive Child Welfare Information System that integrates chatbot AI services and natural language processing to assist social workers with routine administrative workflows including intake functions, client file management, and generation of visitation and court reports. Not used for automated decision-making regarding families.",
+        "source_label": "Kansas DCF / WIBW",
+        "source_url": "https://www.wibw.com/2025/07/22/kansas-department-children-families-modernize-states-child-welfare-system/"
+      },
+      {
+        "name": "KVC Health Systems Data Analytics",
+        "use_type": "Case management",
+        "vendor": "KVC Health Systems + Emporia State University",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "KVC Health Systems, a private foster care agency partnering with Kansas DCF, analyzes historical de-identified client data to uncover trends related to placement stability, runaway reduction, and child wellbeing outcomes.",
+        "source_label": "KVC Health Systems",
+        "source_url": "https://www.kvc.org/blog/kvc-health-systems-and-emporia-state-university-launch-data-analytics-research-to-benefit-children-in-foster-care/"
+      }
+    ]
+  },
+  "Kentucky": {
+    "status": "active",
+    "significance": "Binti deployed statewide for kinship family finding — one of the more intentional uses of the platform focused on keeping children connected to family rather than matching with strangers. Also home to one of few university-based VR training programs for child welfare investigators.",
+    "tools": [
+      {
+        "name": "Binti — Family Finding Platform",
+        "use_type": "Family matching",
+        "vendor": "Binti",
+        "year": "2026",
+        "status": "active",
+        "notes": "Kentucky DCBS deployed Binti statewide to help caseworkers map family trees and identify potential kinship caregivers for foster children in real time. Confirmed April 2026. Fourth state confirmed using Binti alongside Hawaii, Arkansas, and Florida.",
+        "source_label": "WKYT, April 2026",
+        "source_url": "https://www.wkyt.com/2026/04/27/kentucky-uses-new-technology-connect-foster-children-with-family/"
+      },
+      {
+        "name": "University of Kentucky VR Investigation Training",
+        "use_type": "Documentation / admin",
+        "vendor": "University of Kentucky College of Social Work",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "University of Kentucky College of Social Work uses virtual reality simulations to train child welfare workers on conducting investigations. Simulates real-world field scenarios in a safe environment.",
+        "source_label": "University of Kentucky College of Social Work",
+        "source_url": "https://socialwork.uky.edu/uk-social-work-launches-virtual-reality-child-welfare-investigation-simulation/"
+      }
+    ]
+  },
   "Louisiana": {
     "status": "active",
+    "significance": "One of the more active AI deployments in the South — confirmed RSF, hotline AI sentiment monitoring, and an Accenture/AWS cloud modernization partnership. Governor temporarily froze new AI procurement in late 2025 pending CIO approval protocols.",
     "tools": [
       {
         "name": "Rapid Safety Feedback (RSF)",
@@ -182,39 +450,214 @@
         "vendor": "Eckerd Connects + Mindshare Technology",
         "year": "~2015",
         "status": "active",
-        "notes": "Confirmed user per Eckerd Connects.",
+        "notes": "Confirmed user per Eckerd Connects. RSF uses predictive analytics to flag high-risk cases for intensive caseworker monitoring and coaching.",
         "source_label": "The Imprint",
         "source_url": "https://imprintnews.org/child-welfare-2/rapid-safety-feedbacks-rapid-ascent"
+      },
+      {
+        "name": "AI Hotline Transcription and Sentiment Monitoring",
+        "use_type": "Documentation / admin",
+        "vendor": "Unknown",
+        "year": "2025",
+        "status": "active",
+        "notes": "Louisiana DCFS uses AI to transcribe and summarize calls made to the child abuse hotline. An AI sentiment tool monitors calls to identify signs of immediate crisis, alert DCFS leadership, and prioritize high-risk situations in real time.",
+        "source_label": "WAFB, December 2025",
+        "source_url": "https://www.wafb.com/2025/12/11/louisiana-dcfs-launches-new-call-center-improve-child-welfare-response/"
+      },
+      {
+        "name": "Accenture + AWS AI-Powered Case Management",
+        "use_type": "Case management",
+        "vendor": "Accenture + Amazon Web Services",
+        "year": "2025",
+        "status": "active",
+        "notes": "Louisiana DCFS partnered with Accenture and AWS to implement AI-powered cloud-based case management tools designed to reduce administrative burdens, improve data sharing, and free up caseworkers for direct family services.",
+        "source_label": "LinkedIn / Accenture",
+        "source_url": "https://www.linkedin.com/posts/molly-tierney-a56839173_accenture-and-aws-accelerate-ai-powered-reinvention-activity-7386421179676250112-sbZh"
       }
     ]
   },
   "Maine": {
-    "status": "active",
+    "status": "discontinued",
+    "significance": "Early RSF adopter that appears to have moved away from predictive risk screening. A November 2024 HHS OIG audit found 94% of child abuse and neglect reports were out of compliance with screening and investigation requirements — one of the most significant federal audit findings in the dataset.",
     "tools": [
       {
         "name": "Rapid Safety Feedback (RSF)",
         "use_type": "Risk screening",
         "vendor": "Eckerd Connects + Mindshare Technology",
-        "year": "~2015",
-        "status": "active",
-        "notes": "Confirmed user per Eckerd Connects and Imprint reporting. Maine was also flagged in a separate HHS Office of Inspector General audit for child abuse screening compliance issues.",
-        "source_label": "The Imprint",
+        "year": "~2015 — discontinued (date unknown)",
+        "status": "discontinued",
+        "notes": "Maine adopted RSF around 2015-2016 per Eckerd Connects and Imprint reporting. Current OCFS documentation does not reference RSF as an active tool and the state's current framework relies on Structured Decision Making. Exact discontinuation date not confirmed in public sources.",
+        "source_label": "The Imprint / Eckerd Connects",
         "source_url": "https://imprintnews.org/child-welfare-2/rapid-safety-feedbacks-rapid-ascent"
       }
     ]
   },
-  "Maryland": { "tools": [], "status": "none" },
-  "Massachusetts": { "tools": [], "status": "none" },
-  "Michigan": { "tools": [], "status": "none" },
-  "Minnesota": { "tools": [], "status": "none" },
-  "Mississippi": { "tools": [], "status": "none" },
-  "Missouri": { "tools": [], "status": "none" },
+  "Maryland": {
+    "status": "active",
+    "significance": "One of few states confirmed using a major commercial LLM (Anthropic Claude) for family services navigation. Also a Binti user — fifth confirmed state — focused on kinship placement.",
+    "tools": [
+      {
+        "name": "Binti — Kinship Family Finding",
+        "use_type": "Family matching",
+        "vendor": "Binti",
+        "year": "2026",
+        "status": "active",
+        "notes": "Maryland DHS uses Binti to rapidly search multiple databases to locate relatives and trusted adults for children in foster care. Focused on kinship placements. Fifth confirmed state using Binti alongside Hawaii, Arkansas, Florida, and Kentucky.",
+        "source_label": "Route Fifty / Maryland DHS (February 2026)",
+        "source_url": "https://www.route-fifty.com/digital-government/2026/02/maryland-turns-tech-improve-foster-care-outcomes-children/411584/"
+      },
+      {
+        "name": "Microsoft Dynamics — Case Management",
+        "use_type": "Case management",
+        "vendor": "Microsoft",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Maryland uses Microsoft Dynamics and AI-integrated platforms to streamline case management, investigations, and intake procedures. Automates routine paperwork and scheduling.",
+        "source_label": "Maryland DHS",
+        "source_url": "https://www.youtube.com/watch?v=3t6CT8ZPUoM&t=89"
+      },
+      {
+        "name": "Maryland Benefits Platform — Claude AI",
+        "use_type": "Documentation / admin",
+        "vendor": "Anthropic (Claude)",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Maryland uses Anthropic's Claude through its Maryland Benefits Platform to help constituents apply for and track essential family services and identify additional programs for which they may qualify. Includes child poverty and housing access services.",
+        "source_label": "StateScoop",
+        "source_url": "https://statescoop.com/maryland-ai-anthropic-housing-access-child-poverty/"
+      }
+    ]
+  },
+  "Massachusetts": {
+    "status": "none",
+    "significance": "Explicitly explored predictive analytics similar to the Allegheny Family Screening Tool and declined to adopt following advocacy group pushback from the ACLU and Massachusetts Child Welfare Coalition. One of the clearer documented cases of a state actively choosing not to proceed with PRM.",
+    "tools": []
+  },
+  "Michigan": {
+    "status": "active",
+    "significance": "Uses Family-Match for foster care matching — same vendor as Nevada — and Case IQ for child advocate case management. Also piloting an AI case reading tool for MDHHS, though details remain limited in public sources.",
+    "tools": [
+      {
+        "name": "Case IQ — Child Advocate Case Management",
+        "use_type": "Case management",
+        "vendor": "Case IQ",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Michigan Office of the Child Advocate uses Case IQ to streamline investigations, track complaints, and ensure legal compliance. Focuses on administrative efficiency and compliance rather than predictive decision-making.",
+        "source_label": "Case IQ",
+        "source_url": "https://www.caseiq.com/resources/michigan-office-of-the-child-advocate-streamlines-case-management-and-improves-compliance-using-case-iq"
+      },
+      {
+        "name": "Family-Match",
+        "use_type": "Family matching",
+        "vendor": "Adoption-Share / Family-Match",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Michigan MDHHS partners with Adoption-Share to use Family-Match for data-driven foster care recruitment and child-to-family matching. Same vendor confirmed in Nevada.",
+        "source_label": "Michigan House / Adoption-Share",
+        "source_url": "https://www.house.mi.gov/LegislativelyDirectedSpendingItems?ItemId=1521&handler=DownloadDocument"
+      },
+      {
+        "name": "AI Case Reading Tool (unconfirmed)",
+        "use_type": "Documentation / admin",
+        "vendor": "Unknown",
+        "year": "Unknown",
+        "status": "unconfirmed",
+        "notes": "MDHHS officials referenced an AI case reading tool designed to help the department audit and read case documentation. Limited public sourcing — needs verification with MDHHS directly.",
+        "source_label": "Gander Newsroom",
+        "source_url": "https://www.facebook.com/GanderNewsroom/posts/while-mdhhs-officials-say-that-the-ai-case-reading-tool-will-help-the-department/1565884195538349/"
+      }
+    ]
+  },
+  "Minnesota": {
+    "status": "active",
+    "significance": "No PRM in use — deliberately. Uses Lyssn for caseworker quality assurance and has invested in AI literacy training for frontline staff. Home to CASCW at University of Minnesota, one of the leading research centers studying AI ethics in child welfare.",
+    "tools": [
+      {
+        "name": "Lyssn — Motivational Interviewing Fidelity Monitoring",
+        "use_type": "Documentation / admin",
+        "vendor": "Lyssn",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Minnesota DCYF uses Lyssn AI software to evaluate recorded role-play sessions of caseworkers and monitor fidelity to Motivational Interviewing protocols as required under FFPSA. Used for workforce quality assurance — not for case decision-making. Third confirmed state using Lyssn alongside Utah and Wyoming.",
+        "source_label": "Minnesota DHS",
+        "source_url": "https://www.dhs.state.mn.us/main/groups/county_access/documents/twocolumns/mndhs-068532.pdf"
+      },
+      {
+        "name": "ZAP — AI Literacy Training for Frontline Professionals",
+        "use_type": "Documentation / admin",
+        "vendor": "Minnesota Children's Alliance",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Minnesota has invested in AI literacy training for frontline child welfare professionals through the ZAP program, run by the Minnesota Children's Alliance. Focuses on responsible AI use and algorithmic bias awareness for caseworkers.",
+        "source_label": "Minnesota Children's Alliance",
+        "source_url": "https://minnesotachildrensalliance.org/training/zap-ai-literacy-and-responsible-use-for-frontline-professionals/"
+      }
+    ]
+  },
+  "Mississippi": {
+    "status": "none",
+    "significance": "No AI or PRM tools confirmed. Mississippi is under a federal consent decree (Olivia Y.) for child welfare failures — a context that makes AI adoption particularly high-stakes and politically sensitive.",
+    "tools": []
+  },
+  "Missouri": {
+    "status": "active",
+    "acf_home_for_every_child": true,
+    "significance": "No PRM deployed — but actively redesigning its risk assessment framework with plans to integrate predictive risk scores into its FACES case management system. One of few states with a confirmed Google Cloud AI deployment for social services.",
+    "tools": [
+      {
+        "name": "Google Cloud Contact Center AI",
+        "use_type": "Documentation / admin",
+        "vendor": "Google Cloud / Genesys",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Missouri DSS implemented Google Cloud Contact Center AI to handle inbound and outbound inquiries for child welfare and social services. AI chatbots resolve a significant portion of routine contacts without requiring human agents.",
+        "source_label": "Genesys Customer Story",
+        "source_url": "https://www.genesys.com/customer-stories/missouri-department-of-social-services"
+      },
+      {
+        "name": "Predictive Risk Score Integration into FACES (planned)",
+        "use_type": "Risk screening",
+        "vendor": "Evident Change (SDM redesign partner)",
+        "year": "In development",
+        "status": "exploring",
+        "notes": "Missouri Children's Division is redesigning its SDM risk assessment framework in partnership with Evident Change, with plans to integrate predictive risk scores into its FACES electronic case management system. Explicitly framed as decision-support only. No timeline confirmed. Equity considerations and stakeholder feedback are central to the development process.",
+        "source_label": "Missouri DSS Risk Assessment",
+        "source_url": "https://mydss.mo.gov/risk-assessment"
+      }
+    ]
+  },
   "Montana": {
     "status": "none",
     "significance": "No child welfare AI tools identified. State passed AI-related child protection laws (CSAM deepfakes) that advocates fear could be preempted by Trump's 2025 AI executive order.",
     "tools": []
   },
-  "Nebraska": { "tools": [], "status": "none" },
+  "Nebraska": {
+    "status": "active",
+    "significance": "PRM use referenced in policy literature but unconfirmed. More notable for the Boys Town AI caregiver training partnership — an innovative workforce development approach using extended reality tools.",
+    "tools": [
+      {
+        "name": "Boys Town AI Caregiver Training — Extended Reality Tools",
+        "use_type": "Documentation / admin",
+        "vendor": "Boys Town + Buffett Institute (University of Nebraska)",
+        "year": "2026",
+        "status": "active",
+        "notes": "Boys Town has integrated AI characters and extended reality tools into early childhood systems and caregiver training in partnership with the Buffett Institute at the University of Nebraska. Uses simulated child behaviors to improve caregiver support outcomes and workforce development.",
+        "source_label": "Buffett Institute, University of Nebraska (2026)",
+        "source_url": "https://buffettinstitute.nebraska.edu/blog/2026/05/early-childhood-at-the-center-of-innovation-partnering-with-boys-town-on-ai-and-extended-reality-tools"
+      },
+      {
+        "name": "Predictive Risk Model (unconfirmed)",
+        "use_type": "Risk screening",
+        "vendor": "Unknown",
+        "year": "Unknown",
+        "status": "unconfirmed",
+        "notes": "Nebraska DHHS is referenced in policy literature as using predictive analytics at intake to generate risk scores and prioritize cases. No named tool or vendor has been confirmed in public sources. Chapin Hall has a research partnership with the state. Needs direct verification with Nebraska DHHS.",
+        "source_label": "StateScoop, 2025",
+        "source_url": "https://statescoop.com/child-welfare-agencies-predictive-risk-modeling/"
+      }
+    ]
+  },
   "Nevada": {
     "status": "active",
     "significance": "Uses Family-Match for adoption placement — one of the few confirmed AI-powered family matching tools in the country — while PRM deployment remains unverified.",
@@ -241,8 +684,48 @@
       }
     ]
   },
-  "New Hampshire": { "tools": [], "status": "none" },
-  "New Jersey": { "tools": [], "status": "none" },
+  "New Hampshire": {
+    "status": "active",
+    "significance": "Approved a predictive risk modeling portal through the Governor's Council in March 2024 — one of the more recent confirmed PRM adoptions in the dataset. Also has a formal AI Code of Ethics for state systems and legislation prohibiting AI discrimination.",
+    "tools": [
+      {
+        "name": "DCYF Predictive Risk Modeling Portal",
+        "use_type": "Risk screening",
+        "vendor": "Unknown",
+        "year": "2024",
+        "status": "active",
+        "notes": "New Hampshire DCYF received Governor's Council approval in March 2024 for a predictive risk modeling portal. Uses statistical models to analyze historical data, generate risk scores, and help hotline intake staff prioritize abuse investigations. Includes family mapping tools to identify relationships and case histories. Vendor not publicly confirmed.",
+        "source_label": "NH Governor's Council Agenda, March 2024",
+        "source_url": "https://media.sos.nh.gov/govcouncil/2024/0327/11%20GC%20Agenda%20032724.pdf"
+      },
+      {
+        "name": "NH Code of Ethics for AI Systems",
+        "use_type": "AI governance policy",
+        "vendor": "NH Department of Information Technology",
+        "year": "2023",
+        "status": "active",
+        "notes": "New Hampshire DoIT maintains a formal Code of Ethics for AI systems emphasizing fairness, non-discrimination, and privacy. Legislation HB1688 prohibits state agencies from using AI to manipulate or discriminate against members of the public.",
+        "source_label": "NH DoIT",
+        "source_url": "https://www.doit.nh.gov/sites/g/files/ehbemt506/files/documents/2023-07/nh-code-of-ethics-for-ai-systems.pdf"
+      }
+    ]
+  },
+  "New Jersey": {
+    "status": "active",
+    "significance": "Deliberately avoided PRM — instead uses AI for proactive benefits enrollment, automatically connecting vulnerable children to food assistance programs. A model for using AI to expand access rather than surveil families.",
+    "tools": [
+      {
+        "name": "SUN Bucks AI Benefits Matching",
+        "use_type": "Prevention targeting",
+        "vendor": "NJ Office of Innovation",
+        "year": "2025",
+        "status": "active",
+        "notes": "New Jersey Office of Innovation and DCF use AI algorithms to cross-reference SNAP records with other child-centric databases, automatically enrolling thousands of vulnerable children in grocery assistance programs (SUN Bucks). A proactive benefits matching approach rather than risk scoring.",
+        "source_label": "Route Fifty, November 2025",
+        "source_url": "https://www.route-fifty.com/artificial-intelligence/2025/11/new-jersey-uses-ai-tool-boost-resident-and-staff-experiences/409636/"
+      }
+    ]
+  },
   "New Mexico": { 
     "status": "exploring",
     "significance": "No confirmed AI or predictive risk tools identified. CYFD is modernizing its case management system through a 2024 RedMane Technology partnership, but this is infrastructure — not AI. Former caseworkers have raised concerns about over-reliance on structured decision-making tools. No operational AI or PRM tools confirmed. CYFD launched a public child welfare data dashboard in 2026 and has partnered with Chapin Hall on a machine learning pilot study in Doña Ana County — research-stage work rather than deployed tools.",
@@ -250,24 +733,54 @@
   },
   "New York": {
     "status": "active",
-    "significance": "Subject of a major Markup investigation in May 2026 — one of the most scrutinized urban child welfare AI deployments in the country.",
+    "significance": "Subject of a major Markup investigation in May 2026. NYC ACS operates two named proprietary PRMs — the Severe Harm Predictive Model and the Service Termination Conference Model — making it one of the most documented and scrutinized urban child welfare AI deployments in the country.",
     "tools": [
       {
-        "name": "ACS Quality Assurance Algorithm",
+        "name": "Severe Harm Predictive Model",
         "use_type": "Risk screening",
         "vendor": "In-house (NYC Administration for Children's Services)",
-        "year": "~2020",
+        "year": "2018",
         "status": "active",
-        "notes": "NYC ACS uses an algorithm to flag cases for additional quality assurance review from among ~50,000 active cases. Factors include prior contacts, call volume, housing instability. Investigated by The Markup in May 2026. ACS formalized an AI governance policy in 2024.",
+        "notes": "Implemented by NYC ACS in 2018. Evaluates families currently in the child welfare system for risk of future physical or sexual abuse, assigning specialized review teams to the highest-risk households. Processes hundreds of variables from historical child welfare data including prior agency involvement, socioeconomic status, caretaker age, and neighborhood demographics. Subject of Markup investigation May 2026 and EFF scrutiny June 2025. Raised concerns about disproportionate impact on Black and low-income families.",
         "source_label": "The Markup, May 2026",
         "source_url": "https://themarkup.org/investigations/2025/05/20/the-nyc-algorithm-deciding-which-families-are-under-watch-for-child-abuse"
+      },
+      {
+        "name": "Service Termination Conference Model",
+        "use_type": "Risk screening",
+        "vendor": "In-house (NYC Administration for Children's Services)",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "NYC ACS proprietary model that prioritizes which cases the agency should maintain direct involvement in when deciding whether to close a child welfare case. Part of ACS's broader algorithmic decision-support infrastructure.",
+        "source_label": "NYU McSilver Institute",
+        "source_url": "https://mcsilver.nyu.edu/predictive-risk-tools-in-child-welfare-practice/"
       }
     ]
   },
-  "North Carolina": { "tools": [], "status": "none" },
-  "North Dakota": { "tools": [], "status": "none" },
+  "North Carolina": {
+    "status": "active",
+    "significance": "Launched PATH NC in June 2025 — a $65 million statewide platform unifying child welfare data across all 100 counties. One of the most significant child welfare IT modernization projects in the country, with AI built in from the start rather than added later.",
+    "tools": [
+      {
+        "name": "PATH NC — Policy Chatbot and Case Co-Pilot",
+        "use_type": "Documentation / admin",
+        "vendor": "NCDHHS (state-developed)",
+        "year": "2025",
+        "status": "active",
+        "notes": "PATH NC (Partnership and Technology Hub for North Carolina) is a $65 million statewide child welfare platform launched June 2025. Includes two AI features: a Policy Chatbot helping social workers navigate complex child welfare policy in plain English, and a Case Co-Pilot assisting with administrative tasks like tracking child visit counts. Governed by the NCDIT Responsible Use of AI Framework. Not used for predictive risk scoring or removal decisions.",
+        "source_label": "GovTech / NCDHHS (June 2025)",
+        "source_url": "https://www.govtech.com/health/with-new-platform-n-c-aims-to-link-modernize-child-welfare"
+      }
+    ]
+  },
+  "North Dakota": {
+    "status": "none",
+    "significance": "Deliberately cautious on AI in child welfare — state agencies use manual assessments and the Safety Framework Practice Model. Has passed laws limiting AI in healthcare decisions, signaling a broader skepticism toward automated decision-making.",
+    "tools": []
+  },
   "Ohio": {
     "status": "active",
+    "significance": "Confirmed RSF user since ~2015. Also partnered with Eckerd on early cluster analysis research for child welfare risk profiling. Current SACWIS system is standard case management — no additional AI tools confirmed beyond RSF.",
     "tools": [
       {
         "name": "Rapid Safety Feedback (RSF)",
@@ -275,24 +788,35 @@
         "vendor": "Eckerd Connects + Mindshare Technology",
         "year": "~2015",
         "status": "active",
-        "notes": "Confirmed user per Eckerd Connects. Ohio funded its own RSF development per Imprint reporting.",
-        "source_label": "The Imprint",
+        "notes": "Confirmed user per Eckerd Connects. Ohio funded its own RSF development per Imprint reporting. Ohio DJFS also partnered with Eckerd on early cluster analysis research profiling prevalent risks such as substance abuse and domestic violence to direct families toward targeted interventions.",
+        "source_label": "The Imprint / OpenMinds",
         "source_url": "https://imprintnews.org/child-welfare-2/rapid-safety-feedbacks-rapid-ascent"
       }
     ]
   },
   "Oklahoma": {
     "status": "active",
+    "significance": "One of the original Rapid Safety Feedback states — recognized by Drexel's Analytics 50 in 2016 for its implementation. Also one of few states with a named public-facing AI chatbot (Hope) for human services.",
     "tools": [
       {
-        "name": "Rapid Safety Feedback (RSF)",
+        "name": "Eckerd Rapid Safety Feedback (ERSF)",
         "use_type": "Risk screening",
         "vendor": "Eckerd Connects + Mindshare Technology",
-        "year": "~2015",
+        "year": "2016",
         "status": "active",
-        "notes": "Confirmed user per Eckerd Connects.",
-        "source_label": "The Imprint",
-        "source_url": "https://imprintnews.org/child-welfare-2/rapid-safety-feedbacks-rapid-ascent"
+        "notes": "Implemented by Oklahoma DHS to flag open cases with risk factors historically associated with child tragedies and high-risk maltreatment. Works alongside the child welfare database as an early-warning system to alert caseworkers and supervisors before cases escalate. Recognized by Drexel University's Analytics 50 in 2016. Human caseworkers retain final decision-making authority.",
+        "source_label": "Oklahoma DHS / Drexel Analytics 50",
+        "source_url": "https://oklahoma.gov/okdhs/newsroom/2016/june/comm06232016.html"
+      },
+      {
+        "name": "Hope — AI Virtual Assistant",
+        "use_type": "Documentation / admin",
+        "vendor": "Unknown",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Oklahoma Human Services deployed an AI-powered chatbot named Hope on its public website to assist with processing agency questions. Explicitly restricted from being used to report abuse, manage active cases, or offer medical or legal advice.",
+        "source_label": "Oklahoma Human Services",
+        "source_url": "https://oklahoma.gov/okdhs/notices/chatbot.html"
       }
     ]
   },
@@ -348,11 +872,36 @@
       }
     ]
   },
-  "Rhode Island": { "tools": [], "status": "none" },
-  "South Carolina": { "tools": [], "status": "none" },
-  "South Dakota": { "tools": [], "status": "none" },
+  "Rhode Island": {
+    "status": "none",
+    "significance": "No AI or PRM tools confirmed in child welfare. DHS has proposed AI call center modernization for eligibility routing. AI Task Force released a 2026 action plan prioritizing education and workforce over family surveillance.",
+    "tools": []
+  },
+  "South Carolina": {
+    "status": "active",
+    "significance": "No PRM in use — but one of few states with a confirmed algorithmic service recommendation system. The Praed Foundation partnership uses FAST and CANS inputs to algorithmically match families to targeted services, a less controversial but meaningful AI application.",
+    "tools": [
+      {
+        "name": "FAST/CANS Algorithmic Service Recommendation",
+        "use_type": "Case management",
+        "vendor": "Praed Foundation",
+        "year": "2021",
+        "status": "active",
+        "notes": "South Carolina DSS partners with the Praed Foundation to use an automated service recommendation algorithm that processes Family Advocacy and Support Tool (FAST) and Child and Adolescent Needs and Strengths (CANS) assessment inputs to suggest the most appropriate and targeted services for at-risk families. SCDSS standardized its assessment framework in 2021. Not used for risk scoring or removal decisions.",
+        "source_label": "SC State House Annual Accountability Report 2024",
+        "source_url": "https://www.scstatehouse.gov/reports/aar2024/L040.pdf"
+      }
+    ]
+  },
+  "South Dakota": {
+    "status": "none",
+    "significance": "No AI tools confirmed. Legislature introduced HB 1056 to require DSS to seek federal approval before implementing AI or automated systems — a preemptive governance move before any tool has been deployed.",
+    "tools": []
+  },
   "Tennessee": {
     "status": "active",
+    "acf_home_for_every_child": true,
+    "significance": "Confirmed RSF user and ACF A Home for Every Child participant. Also explored and scrapped Family-Match for adoption matching over transparency and data integration issues — one of few states with a documented rejection of a specific vendor tool.",
     "tools": [
       {
         "name": "Rapid Safety Feedback (RSF)",
@@ -363,10 +912,45 @@
         "notes": "Confirmed user per Eckerd Connects.",
         "source_label": "The Imprint",
         "source_url": "https://imprintnews.org/child-welfare-2/rapid-safety-feedbacks-rapid-ascent"
+      },
+      {
+        "name": "Family-Match (adoption matchmaking)",
+        "use_type": "Family matching",
+        "vendor": "Family-Match",
+        "year": "Discontinued (date unknown)",
+        "status": "discontinued",
+        "notes": "Tennessee DCS explored Family-Match for adoption matchmaking but ultimately scrapped the program over transparency and data integration issues. One of few documented cases of a state explicitly rejecting a specific vendor tool after evaluation.",
+        "source_label": "El País / Tennessee Bar Association",
+        "source_url": "https://english.elpais.com/technology/2023-11-06/inspired-by-online-dating-ai-tool-for-adoption-matchmaking-falls-short-for-vulnerable-foster-kids.html"
       }
     ]
   },
-  "Texas": { "tools": [], "status": "none" },
+  "Texas": {
+    "status": "active",
+    "significance": "One of the largest child welfare systems in the country — and one that has explicitly resisted predictive risk modeling on policy grounds while still integrating AI for administrative and prevention purposes.",
+    "tools": [
+      {
+        "name": "Texas Child Care Connection — AI Search and Chatbot",
+        "use_type": "Documentation / admin",
+        "vendor": "Texas HHSC",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Texas Health and Human Services Commission uses AI-powered search and intelligent chatbots to help families navigate child care connections and child support tools. Focused on administrative efficiency and family navigation rather than case decision-making.",
+        "source_label": "GovTech / Texas Child Care",
+        "source_url": "https://www.govtech.com/artificial-intelligence/ai-powered-search-drives-intelligent-texas-child-support-tool"
+      },
+      {
+        "name": "Upbring — Predictive Neighborhood Risk Modeling",
+        "use_type": "Prevention targeting",
+        "vendor": "Upbring (nonprofit partner)",
+        "year": "2026",
+        "status": "active",
+        "notes": "Austin-based nonprofit Upbring uses machine learning and predictive modeling to identify high-risk neighborhoods, allowing social workers to proactively connect at-risk families with resources before crises escalate. Partner organization — not a state agency tool. Texas DFPS itself has not deployed a PRM.",
+        "source_label": "The Daily Texan, March 2026",
+        "source_url": "https://thedailytexan.com/2026/03/09/texas-nonprofit-uses-innovative-technology-to-rethink-child-welfare/"
+      }
+    ]
+  },
   "Utah": {
     "status": "active",
     "significance": "First state to deploy Lyssn AI speech analysis statewide — a workforce quality assurance model that other states including Wyoming have since adopted.",
@@ -393,8 +977,47 @@
       }
     ]
   },
-  "Vermont": { "tools": [], "status": "none" },
-  "Virginia": { "tools": [], "status": "none" },
+  "Vermont": {
+    "status": "none",
+    "significance": "No AI or PRM tools confirmed — and unlikely in the near term. Vermont's primary child welfare IT system (SSMIS) dates to the 1980s and predates the internet. The state is focused on achieving basic data functionality before any advanced AI adoption.",
+    "tools": []
+  },
+  "Virginia": {
+    "status": "active",
+    "significance": "No statewide PRM — but one of the more comprehensive administrative AI deployments in the dataset. Lyssn for workforce quality, RedMane mCase for caseworker mobility, and county-level GenAI use in Fairfax. Also piloted geographic predictive analytics with Predict Align Prevent.",
+    "tools": [
+      {
+        "name": "Lyssn — Caseworker Coaching",
+        "use_type": "Documentation / admin",
+        "vendor": "Lyssn",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Virginia state and local agencies use Lyssn AI coaching platform to provide workers with trauma-informed microlearning and immediate feedback on interviewing and counseling skills. Fourth confirmed state using Lyssn alongside Utah, Wyoming, and Minnesota.",
+        "source_label": "APHSA",
+        "source_url": "https://aphsa.org/resources/reimagining-child-welfare-training-with-ai-building-a-stronger-workforce-thecatalyst/"
+      },
+      {
+        "name": "RedMane mCase — Mobile Case Management",
+        "use_type": "Case management",
+        "vendor": "RedMane Technology",
+        "year": "Unknown",
+        "status": "active",
+        "notes": "Virginia transitioned 3,000+ caseworkers to RedMane's mCase mobile platform to reduce paperwork and allow more time with families in the field. Fairfax County also uses generative AI to summarize policy documents, draft interview questions, and transcribe meetings.",
+        "source_label": "RedMane Technology",
+        "source_url": "https://www.redmane.com/supporting-child-welfare-initiatives/"
+      },
+      {
+        "name": "Geographic Predictive Analytics — Predict Align Prevent (pilot)",
+        "use_type": "Prevention targeting",
+        "vendor": "Predict Align Prevent",
+        "year": "Unknown",
+        "status": "exploring",
+        "notes": "Virginia DSS collaborated with Predict Align Prevent to test location-based predictive models identifying geographic hot spots for child maltreatment to better allocate prevention resources. Pilot status — not confirmed as ongoing operational deployment.",
+        "source_label": "Virginia DSS",
+        "source_url": "https://www.facebook.com/VDSSGOV/photos/carl-ayers-director-of-the-vdss-division-of-family-services-and-jeff-price-direc/1921162771241708/"
+      }
+    ]
+  },
   "Washington": {
     "status": "active",
     "significance": "Made a deliberate policy choice to restrict AI to administrative support, explicitly rejecting predictive risk scoring on equity grounds.",
@@ -421,8 +1044,48 @@
       }
     ]
   },
-  "West Virginia": { "tools": [], "status": "none" },
-  "Wisconsin": { "tools": [], "status": "none" },
+  "West Virginia": {
+    "status": "active",
+    "significance": "Launched COMET via Cardinality.ai in 2025 following a critical federal OIG audit on CPS non-compliance — one of few states where AI adoption was directly driven by federal accountability pressure rather than proactive modernization.",
+    "tools": [
+      {
+        "name": "COMET — Communication and Operations Mobile Engagement Tool",
+        "use_type": "Case management",
+        "vendor": "Cardinality.ai",
+        "year": "2025",
+        "status": "active",
+        "notes": "West Virginia DoHS launched COMET powered by Cardinality.ai to digitize case tracking and enable secure real-time communication between caseworkers, biological parents, and foster/kinship caregivers. Launched in direct response to a federal OIG audit finding significant CPS non-compliance. Fifth state confirmed using Cardinality.ai alongside Oregon, Wyoming, Georgia, and Indiana.",
+        "source_label": "WV DHHR / Cardinality.ai",
+        "source_url": "https://dhhr.wv.gov/News/2025/Pages/West-Virginia-Department-of-Human-Services-and-Cardinality-Launch-COMET-to-Strengthen-Foster-Care-Communication.aspx"
+      },
+      {
+        "name": "Predictive Risk Modeling (unconfirmed)",
+        "use_type": "Risk screening",
+        "vendor": "Unknown",
+        "year": "Unknown",
+        "status": "unconfirmed",
+        "notes": "West Virginia is referenced as integrating predictive analytics to forecast placement needs and flag family risk patterns. No named tool or vendor confirmed in public sources. Needs direct verification with WV DoHS.",
+        "source_label": "WV News / StateScoop",
+        "source_url": "https://www.wvnews.com/news/wvnews/west-virginia-dhs-secretary-mayer-outlines-aggressive-child-welfare-overhaul-following-federal-report/article_1ee60c87-5e61-4698-9e25-e479dceaacce.html"
+      }
+    ]
+  },
+  "Wisconsin": {
+    "status": "active",
+    "significance": "Home to one of the few PRMs in the country focused on post-reunification rather than intake screening — the RPM allocates resources to families most at risk of re-entering the system after going home, a fundamentally different intervention point than most states.",
+    "tools": [
+      {
+        "name": "Re-entry Prevention Model (RPM 2.0)",
+        "use_type": "Risk screening",
+        "vendor": "In-house (developed via Title IV-E waiver demonstration project)",
+        "year": "Upgraded to RPM 2.0 (year unknown)",
+        "status": "active",
+        "notes": "Wisconsin DCF uses the Re-entry Prevention Model to forecast which children in foster care are at highest risk of re-entering the child welfare system after reunification. Pulls data from eWiSACWIS case management system. Scores based on five factors including prior out-of-home care episodes, parental incarceration, single-parent home status, CANS life functioning items, and treatment foster care placement. Families scoring at or above threshold are prioritized for the Post-Reunification Support (P.S.) Program. Not used for removal decisions — used to allocate post-reunification services.",
+        "source_label": "Children and Family Research Center, University of Illinois",
+        "source_url": "https://predictive.cfrc.illinois.edu/pdf/Wisconsin.pdf"
+      }
+    ]
+  },
   "Wyoming": {
     "status": "active",
     "significance": "No predictive risk model in use — instead uses AI for workforce quality assurance and foster care case management, representing a different model of AI integration.",
