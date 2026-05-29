@@ -736,7 +736,7 @@
     ]
   },
   "New Mexico": { 
-    "status": "exploring",
+    "status": "none",
     "significance": "No confirmed AI or predictive risk tools identified. CYFD is modernizing its case management system through a 2024 RedMane Technology partnership, but this is infrastructure — not AI. Former caseworkers have raised concerns about over-reliance on structured decision-making tools. No operational AI or PRM tools confirmed. CYFD launched a public child welfare data dashboard in 2026 and has partnered with Chapin Hall on a machine learning pilot study in Doña Ana County — research-stage work rather than deployed tools.",
     "tools": []
   },
